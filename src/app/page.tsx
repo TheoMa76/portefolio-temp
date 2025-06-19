@@ -1,6 +1,8 @@
+import Textblock from "@/components/ui/Textblock";
+
 export default function Home() {
   return (
-    <div id="div-content">
+    <Textblock title={"Lorem Ipsum"}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
       eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
@@ -34,6 +36,204 @@ export default function Home() {
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
       eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, 
+      eget facilisis quam felis id mauris. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </Textblock>
   );
 }

@@ -5,7 +5,7 @@ import Link from "../ui/Link";
 export default function CustomFooter() {
   return (
     <>
-        <div className="flex justify-center space-x-4 mb-4">
+        <div className="flex justify-center bg-[var(--primary)] min-h-1/4 space-x-4 mb-4 text-[var(--secondary)] w-full">
             <Link
                 href="https://github.com/TheoMa76"
                 target="_blank"

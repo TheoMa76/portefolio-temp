@@ -4,8 +4,8 @@ import "./globals.css";
 import CustomFooter from "@/components/layout/CustomFooter";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Navbar from "@/components/layout/Navbar";
 import ImageHeader from "@/components/ui/ImageHeader";
+import FullPageDecoration from "@/components/layout/FullPageDecoration";
 
 config.autoAddCss = false
 
@@ -53,15 +53,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="fr">
+      <html lang="fr" data-theme="light">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <FullPageDecoration />
           <header>
             <ImageHeader videoUrl="/videos/test.mp4" />
           </header>
           <main>
-            {children}
+              {children}
           </main>
           <footer>
             <CustomFooter />
