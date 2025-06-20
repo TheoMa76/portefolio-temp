@@ -23,26 +23,20 @@ export const metadata: Metadata = {
   title: "Théo Maerten | Portfolio",
   metadataBase: new URL("https://theomaerten.com"),
   openGraph: {
-    title: "Théo Maerten | Portfolio",
+    title: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
     description: "Portfolio de Théo Maerten, un développeur web passionné.",
     url: "https://theomaerten.com",
-    siteName: "Théo Maerten | Portfolio",
+    siteName: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
     images: [
       {
         url: "https://theomaerten.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Théo Maerten | Portfolio",
+        alt: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
       },
     ],
     locale: "fr_FR",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Théo Maerten | Portfolio",
-    description: "Portfolio de Théo Maerten, un développeur web passionné.",
-    images: ["https://theomaerten.com/og-image.png"],
   },
   description: "Portfolio de Théo Maerten, un développeur web passionné.",
 };
@@ -59,7 +53,7 @@ export default function RootLayout({
         >
           <FullPageDecoration />
           <header>
-            <ImageHeader videoUrl="/videos/test.mp4" />
+            <ImageHeader desktopVideoUrl="/videos/presentation-desktop.mp4" mobileVideoUrl="/videos/presentation-mobile-s.mp4" />
           </header>
           <main>
               {children}

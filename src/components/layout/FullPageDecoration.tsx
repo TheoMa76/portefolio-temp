@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useMemo } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 
 type Shape = 'triangle' | 'trapezoid'
 
@@ -41,15 +41,21 @@ type Props = {
 
 const FullPageDecoration = ({
   shapeCount = 15,
-  color = 'var(--primary)',
+  color = 'var(--tertiary)',
   columns = 6,
 }: Props) => {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   const shapes = useMemo(() => {
+    if (!isMounted) return null
+
     return Array.from({ length: shapeCount }).map((_, i) => {
       const shape: Shape = Math.random() > 0.5 ? 'triangle' : 'trapezoid'
       const size = randomBetween(20, 150)
-
-      // Décalage aléatoire dans la cellule pour casser l’alignement
       const offsetX = randomBetween(-40, 40)
       const offsetY = randomBetween(-40, 40)
 
@@ -67,9 +73,11 @@ const FullPageDecoration = ({
         </div>
       )
     })
-  }, [shapeCount, color])
+  }, [isMounted, shapeCount, color])
 
   const rows = Math.ceil(shapeCount / columns)
+
+  if (!isMounted) return null // ou un fallback vide
 
   return (
     <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">

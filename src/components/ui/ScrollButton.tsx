@@ -79,7 +79,7 @@ const ScrollButton = ({ children, className, targetId }: ScrollButtonProps) => {
 
   return (
     <button
-      className={`rounded-4xl bg-[var(--primary)] drop-shadow-md px-5 cursor-pointer
+      className={`rounded-lg bg-[var(--primary)] drop-shadow-md px-5 cursor-pointer
         transition transform duration-200 ease-in-out
         hover:bg-[var(--primary-dark)] hover:translate-y-1
         active:scale-95 active:translate-y-0.5
