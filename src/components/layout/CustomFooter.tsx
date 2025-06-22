@@ -1,6 +1,7 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFreeCodeCamp, faGithub, faHubspot, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "../ui/Link";
+import { faCircleUser, faCode, faCodeBranch } from "@fortawesome/free-solid-svg-icons";
 
 export default function CustomFooter() {
   return (
@@ -30,6 +31,15 @@ export default function CustomFooter() {
             icone={<FontAwesomeIcon icon={faLinkedin} />}
           >
             LinkedIn
+          </Link>
+          <Link
+            href="https://www.malt.fr/profile/theomaerten"
+            target="_blank"
+            rel="noopener noreferrer"
+            ariaLabel="Lien vers le compte Malt de Théo Maerten"
+            icone={<FontAwesomeIcon icon={faCircleUser} />}
+          >
+            Malt
           </Link>
         </div>
 

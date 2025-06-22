@@ -15,14 +15,14 @@ const Textblock = ({ title, children }: Props) => {
       aria-labelledby={headingId}
     >
       <div
-        className="w-full border-t-2 border-[var(--tertiary)] sm:w-[90%] md:w-4/5 lg:w-2/3 bg-[var(--background)] text-[var(--white)] p-6 rounded-3xl shadow-2xl glow"
+        className="w-full border-t-2 border-[var(--tertiary)] bg-[var(--background)] text-[var(--white)] p-6 rounded-3xl shadow-2xl glow"
         style={{
           boxShadow: `0 20px 25px -5px var(--tertiary), 0 10px 10px -5px var(--white)`,
         }}
       >
         <h2
           id={headingId}
-          className="text-xl md:text-2xl font-bold mb-4 text-[var(--tertiary)] text-center"
+          className="text-2xl md:text-4xl font-bold mb-4 text-[var(--secondary)] text-center drop-shadow-lg"
         >
           {title}
         </h2>

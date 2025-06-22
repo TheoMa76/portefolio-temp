@@ -13,9 +13,8 @@ const LogoElement = ({ logo, text }: Props) => {
       className="flex flex-col items-center text-[var(--primary)]"
     >
       <div
-        className="animate-float mb-2 text-[3rem]"
+        className="animate-float mb-2 text-[3rem] text-[var(--secondary)]"
         aria-hidden="true"
-        style={{ color: 'var(--secondary)' }}
       >
         {logo}
       </div>

@@ -2,59 +2,42 @@
 
 import { useState } from "react"
 import ProjectCard from "./ProjectCard"
+import { Project } from "../type/Project.type"
 
-interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  liveUrl: string
-  githubUrl?: string
-  technologies: string[]
-  featured?: boolean
-}
+
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "GreenPot : Plateforme participative écologique",
     description:
-      "Une plateforme e-commerce moderne avec panier, paiement et gestion des commandes. Interface responsive et optimisée pour les performances.",
-    image: "/placeholder.svg?height=300&width=500",
-    liveUrl: "https://example-ecommerce.com",
-    githubUrl: "https://github.com/username/ecommerce",
-    technologies: ["React", "Next.js", "Stripe", "Tailwind CSS"],
+      "Une plateforme participative pour promouvoir les initiatives écologiques locales",
+    image: "/images/greenpot.webp",
+    liveUrl: "https://theomaerten.fr",
+    githubUrl: "https://github.com/TheoMa76/greenpot",
+    technologies: ["Laravel", "PHP", "Apex.js", "Tailwind CSS", "MariaDB/SQL"],
     featured: true,
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
+    title: "PixelPerfect : Site vitrine",
     description:
-      "Tableau de bord interactif pour visualiser des données analytiques avec graphiques en temps réel et filtres avancés.",
-    image: "/placeholder.svg?height=300&width=500",
-    liveUrl: "https://example-dashboard.com",
-    githubUrl: "https://github.com/username/dashboard",
-    technologies: ["Vue.js", "D3.js", "Node.js", "MongoDB"],
+      "Site vitrine pour une agence de design avec animations CSS, optimisé SEO, entièrement responsive et accessible.",
+    image: "/images/pixelperfect.webp",
+    liveUrl: "https://pixelperfectastro.netlify.app/",
+    githubUrl: "https://github.com/TheoMa76/pixelperfectastro",
+    technologies: ["Astro.js", "React.js", "Tailwind CSS", "TypeScript"],
   },
   {
     id: 3,
-    title: "Portfolio Créatif",
+    title: "Easymod : OpenClassroom pour minecraft",
     description:
-      "Site portfolio pour un artiste avec galerie interactive, animations fluides et système de contact intégré.",
-    image: "/placeholder.svg?height=300&width=500",
-    liveUrl: "https://example-portfolio.com",
-    technologies: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-  },
-  {
-    id: 4,
-    title: "Application Mobile",
-    description:
-      "Application mobile cross-platform pour la gestion de tâches avec synchronisation cloud et notifications push.",
-    image: "/placeholder.svg?height=300&width=500",
-    liveUrl: "https://example-app.com",
-    githubUrl: "https://github.com/username/mobile-app",
-    technologies: ["React Native", "Firebase", "Redux"],
-  },
+      "Site web éducatif pour apprendre à modder Minecraft, avec tutoriels interactifs. UI style Minecraft, responsive et accessible.",
+    image: "/images/easymod.webp",
+    liveUrl: "https://easymod.theomaerten.fr",
+    githubUrl: "https://github.com/TheoMa76/easymodfront",
+    technologies: ["Next.js", "React.js", "Symfony/API REST", "Tailwind CSS"],
+  }
 ]
 
 export default function PortfolioProjects() {
@@ -64,10 +47,7 @@ export default function PortfolioProjects() {
     <section className="py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="projects-heading">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-16">
-          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--white)" }}>
-            Mes Projets
-          </h2>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--secondary)" }}>
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed text-[var(--white)]">
             Découvrez une sélection de mes réalisations web, alliant créativité, performance technique et expérience utilisateur optimale.
           </p>
         </header>
@@ -85,16 +65,12 @@ export default function PortfolioProjects() {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-lg mb-6" style={{ color: "var(--secondary)" }}>
-            Intéressé par mon travail ?
-          </p>
+            <p className="text-lg mb-6 text-[var(--white)]">
+            Vous recherchez un développeur passionné, créatif et rigoureux pour concrétiser vos projets web&nbsp;? Fort d’une expertise en React, Next.js, Tailwind CSS et développement fullstack, je mets mes compétences au service de votre réussite digitale. Discutons ensemble de vos besoins et donnons vie à vos idées&nbsp;!
+            </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 glow"
-            style={{
-              backgroundColor: "var(--tertiary)",
-              color: "var(--background)",
-            }}
+            className="bg-[var(--tertiary)] text-[var(--background)] inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 glow"
           >
             Contactez-moi
           </a>

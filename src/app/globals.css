@@ -3,7 +3,7 @@
 :root[data-theme='light'] {
   --background: #27187e;
   --primary: #758bfd;
-  --tertiary: #ff8600;
+  --tertiary: #FF0F;
   --secondary: #aeb8fe;
   --white: #f1f2f6
 }
@@ -11,7 +11,7 @@
 :root[data-theme='dark'] {
   --background: #27187e;
   --primary: #758bfd;
-  --tertiary: #ff8600;
+  --tertiary: #FF0F;
   --secondary: #aeb8fe;
   --white: #f1f2f6;
 }

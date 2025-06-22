@@ -77,20 +77,22 @@ const FullPageDecoration = ({
 
   const rows = Math.ceil(shapeCount / columns)
 
-  if (!isMounted) return null // ou un fallback vide
+  if (!isMounted) return null
 
   return (
     <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
-      <div
-        className="w-full h-full grid"
-        style={{
-          gridTemplateColumns: `repeat(${columns}, 1fr)`,
-          gridTemplateRows: `repeat(${rows}, 1fr)`,
-        }}
-      >
-        {shapes}
-      </div>
+  <div className="w-full h-full backdrop-blur-md bg-white/30">
+    <div
+      className="w-full h-full grid"
+      style={{
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, 1fr)`,
+      }}
+    >
+      {shapes}
     </div>
+  </div>
+</div>
   )
 }
 
