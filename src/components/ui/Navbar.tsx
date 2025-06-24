@@ -14,7 +14,7 @@ export interface NavbarProps {
 
 const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
   ({ links }, ref) => {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = React.useState(true);
 
     const toggleMenu = () => {
       setIsOpen(!isOpen);
