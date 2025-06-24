@@ -57,7 +57,7 @@ const TimelineItem = ({ item, index, isLast }: TimelineItemProps) => (
   <div className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "" : "lg:flex-row-reverse"}`}>
     <div className="flex-1 w-full px-4 lg:px-8">
       <div
-        className={`bg-[var(--background)] p-6 md:p-8 rounded-2xl border-2 border-[var(--primary)] glow hover:scale-[1.02] transition-all duration-300 ${
+        className={`bg-[var(--background)] p-6 md:p-8 rounded-2xl border-2 border-[var(--primary)] glow transition-all duration-300 ${
           index % 2 === 0 ? "lg:mr-4" : "lg:ml-4"
         }`}
       >

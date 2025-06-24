@@ -83,7 +83,7 @@ export default function PortfolioProjects() {
           <div className="flex justify-center mt-20 animate-float">
               <a
               href="#contact"
-              className="bg-[var(--tertiary)] mx-auto text-[var(--background)] inline-flex items-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 glow hover:glowblue"
+              className="bg-[var(--tertiary)] mx-auto text-[var(--background)] inline-flex items-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 xl:hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 glow xl:hover:glowblue"
             >
               Contactez-moi
             </a>

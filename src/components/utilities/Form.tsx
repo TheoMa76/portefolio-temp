@@ -140,7 +140,7 @@ export default function Form() {
                 ${
                   errors.name
                     ? "border-[var(--error)] focus:border-[var(--tertiary)] focus:ring-[var(--error)]/50"
-                    : "border-[var(--primary)]/50 hover:border-[var(--primary)]"
+                    : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"
                 }
               `}
               placeholder="Votre nom complet"
@@ -179,7 +179,7 @@ export default function Form() {
                 ${
                   errors.email
                     ? "border-[var(--error)] focus:border-[var(--error)] focus:ring-[var(--error)]/50"
-                    : "border-[var(--primary)]/50 hover:border-[var(--primary)]"
+                    : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"
                 }
               `}
               placeholder="votre@email.com"
@@ -218,7 +218,7 @@ export default function Form() {
                 ${
                   errors.message
                     ? "border-[var(--error)] focus:text-[var(--error)] focus:ring-[var(--error)]/50"
-                    : "border-[var(--primary)]/50 hover:border-[var(--primary)]"
+                    : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"
                 }
               `}
               placeholder="Écrivez votre message ici..."
@@ -245,11 +245,11 @@ export default function Form() {
           disabled={isSubmitting}
           className={`
             w-full py-3 rounded-2xl font-semibold text-[var(--background)] 
-            bg-[var(--tertiary)] hover:bg-[var(--background)] hover:text-[var(--white)] cursor-pointer
-            hover:from-[var(--tertiary)]/90 hover:to-[var(--tertiary)]
+            bg-[var(--tertiary)] xl:hover:bg-[var(--background)] xl:hover:text-[var(--white)] cursor-pointer
+            xl:hover:from-[var(--tertiary)]/90 xl:hover:to-[var(--tertiary)]
             focus:ring-4 focus:ring-[var(--tertiary)]/50
             disabled:opacity-50 disabled:cursor-not-allowed
-            transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]
+            transition-all duration-300 transform xl:hover:scale-[1.02] active:scale-[0.98]
             ${!isSubmitting ? "glowblue" : ""}
           `}
           aria-describedby="submit-status"

@@ -94,7 +94,7 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
               {isMobile === null ? null : (
                 <div className="text-sm md:text-base xl:text-lg text-center">
                   <ScrollButton
-                    className="italic border-transparent border-2 hover:border-[var(--primary)] transition-colors duration-200"
+                    className="italic border-transparent border-2 xl:hover:border-[var(--primary)] transition-colors duration-200"
                     targetId="image-header"
                   >
                     {isMobile ? "Découvrez mon parcours" : "Découvrez mon parcours et mes réalisations"}

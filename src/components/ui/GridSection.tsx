@@ -71,10 +71,10 @@ const isDarkTheme = typeof document !== "undefined" && document.documentElement.
 
 const GridCard = ({ title, content, icon, animationDelay = 0 }: GridCardProps) => (
   <div
-    className="bg-[var(--background)] border-2 border-[var(--primary)] p-6 rounded-2xl glowblue hover:scale-105 transition-all duration-300 group"
+    className="bg-[var(--background)] border-2 border-[var(--primary)] p-6 rounded-2xl glowblue transition-all duration-300 group"
     style={{ animationDelay: `${animationDelay}s` }}
   >
-    {icon && <div className={`${isDarkTheme ? 'text-[var(--tertiary)]' : 'text-[var(--white)]'} mb-4 group-hover:animate-float`}>{icon}</div>}
+    {icon && <div className={`${isDarkTheme ? 'text-[var(--tertiary)]' : 'text-[var(--white)]'} mb-4`}>{icon}</div>}
     <h3 className="text-xl font-bold mb-3 text-[var(--tertiary)]">{title}</h3>
     <div className="text-[var(--white)] leading-relaxed">{content}</div>
   </div>

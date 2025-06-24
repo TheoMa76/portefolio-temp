@@ -85,7 +85,7 @@ const FullPageDecoration = ({
 
   return (
     <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
-  <div className="w-full h-full backdrop-blur-md bg-white/30">
+      <div className="w-full h-full backdrop-blur-md bg-[var(--white)]/30">
     <div
       className="w-full h-full grid"
       style={{

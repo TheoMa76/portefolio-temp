@@ -54,7 +54,11 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
   const content = (
     <>
       <div className="flex-1">
-        <div className="bg-[var(--background)] border-l-4 border-[var(--tertiary)] p-8 rounded-r-3xl glow hover:translate-x-2 transition-all duration-500">
+        <div
+          className={`bg-[var(--background)] border-l-4 border-[var(--tertiary)] p-8 rounded-r-3xl glow transition-all duration-500${
+            item.url ? " xl:hover:translate-x-2" : ""
+          }`}
+        >
           <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[var(--secondary)]">{item.title}</h3>
           <div className="text-[var(--white)] leading-relaxed text-lg">{item.content}</div>
         </div>

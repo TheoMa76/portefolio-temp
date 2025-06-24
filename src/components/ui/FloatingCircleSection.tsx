@@ -72,7 +72,7 @@ const FloatItem = ({ content, position, index }: FloatingItemProps) => (
       animationDuration: `${3 + index * 0.5}s`,
     }}
   >
-    <div className="w-24 h-24 md:w-32 md:h-32 bg-[var(--background)] border-2 border-[var(--secondary)] rounded-full glowblue flex items-center justify-center hover:scale-110 transition-all duration-300">
+    <div className="w-24 h-24 md:w-32 md:h-32 bg-[var(--background)] border-2 border-[var(--secondary)] rounded-full glowblue flex items-center justify-center xl:hover:scale-110 transition-all duration-300">
       <div className="text-[var(--white)] text-center p-2 text-sm">{content}</div>
     </div>
   </div>

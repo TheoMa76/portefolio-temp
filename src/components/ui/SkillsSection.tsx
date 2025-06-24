@@ -59,13 +59,13 @@ export const SkillsSection = ({ title }: SkillsSectionProps) => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-[var(--background)] border-2 border-[var(--primary)] p-8 rounded-2xl glowblue hover:scale-105 transition-all duration-300 group text-center"
+              className="bg-[var(--background)] border-2 border-[var(--primary)] p-8 rounded-2xl glowblue transition-all duration-300 group text-center"
               style={{
                 animationDelay: `${index * 0.3}s`,
               }}
             >
               
-              <div className="text-[var(--tertiary)] mb-6 group-hover:animate-float transition-all duration-300">
+              <div className="text-[var(--tertiary)] mb-6 transition-all duration-300">
                 <LogoElement logo={skill.icon} text={skill.text} />
               </div>
               <p className="text-[var(--white)] leading-relaxed text-sm">{skill.description}</p>
@@ -78,12 +78,12 @@ export const SkillsSection = ({ title }: SkillsSectionProps) => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-[var(--background)] border-2 border-[var(--primary)] p-6 rounded-2xl glowblue hover:scale-105 transition-all duration-300 group w-full max-w-sm text-center"
+                className="bg-[var(--background)] border-2 border-[var(--primary)] p-6 rounded-2xl glowblue transition-all duration-300 group w-full max-w-sm text-center"
                 style={{
                   animationDelay: `${index * 0.2}s`,
                 }}
               >
-                <div className="text-[var(--tertiary)] mb-4 group-hover:animate-float transition-all duration-300">
+                <div className="text-[var(--tertiary)] mb-4 transition-all duration-300">
                   {skill.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-[var(--secondary)]">{skill.text}</h3>

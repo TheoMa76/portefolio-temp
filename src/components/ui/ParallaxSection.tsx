@@ -1,7 +1,3 @@
-"use client";
-
-import React, { useEffect, useState, useRef } from "react";
-
 type BackgroundElement = {
   id: string;
   element: React.ReactNode;
@@ -33,32 +29,6 @@ export const ParallaxSection = ({
   className = "",
 }: ParallaxSectionProps) => {
   const headingId = id || `parallax-heading-${title.replace(/\s+/g, "-").toLowerCase()}`;
-  const [scrollY, setScrollY] = useState(0);
-  const elementRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleClick = (id: string) => {
-    const el = elementRefs.current[id];
-    if (el) {
-      el.animate(
-        [
-          { transform: "translate(0, 0) rotate(0deg)" },
-          { transform: `translate(${Math.random() * 500 - 250}px, ${Math.random() * 500 - 250}px) rotate(${Math.random() * 360}deg)` },
-          { transform: "translate(0, 0) rotate(0deg)" }
-        ],
-        {
-          duration: 1000,
-          easing: "ease-in-out"
-        }
-      );
-    }
-  };
 
   return (
     <section
@@ -68,14 +38,11 @@ export const ParallaxSection = ({
     >
       <div className="absolute inset-0 z-0" aria-hidden="true">
         {backgroundElements.map((element) => {
-          const parallaxOffset = scrollY * 0.1;
 
           return (
             <div
               key={element.id}
-              ref={(ref) => { elementRefs.current[element.id] = ref; }}
-              onClick={() => handleClick(element.id)}
-              className="absolute animate-float opacity-80 transition-transform duration-300 cursor-pointer"
+              className="absolute animate-float opacity-80 transition-transform duration-300"
               style={{
                 top: element.position.top,
                 left: element.position.left,
@@ -83,7 +50,6 @@ export const ParallaxSection = ({
                 bottom: element.position.bottom,
                 animationDelay: `${element.animationDelay}s`,
                 animationDuration: `${element.animationDuration}s`,
-                transform: `translateY(${parallaxOffset}px)`,
               }}
             >
               {element.element}

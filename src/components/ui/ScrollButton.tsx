@@ -86,8 +86,8 @@ const ScrollButton = ({ children, className, targetId }: ScrollButtonProps) => {
     <button
       className={`rounded-2xl bg-[var(--primary)] drop-shadow-md px-5 cursor-pointer my-2 py-2
         transition transform duration-200 ease-in-out
-        hover:bg-[var(--white)] hover:shadow-lg hover:text-[var(--background)]
-        active:scale-95 active:translate-y-0.5 hover:border-[var(--secondary)] hover:border-2
+        xl:hover:bg-[var(--white)] xl:hover:shadow-lg xl:hover:text-[var(--background)]
+        active:scale-95 active:translate-y-0.5 xl:hover:border-[var(--secondary)] xl:hover:border-2
         ${className}`}
       onClick={handleClick}
     >

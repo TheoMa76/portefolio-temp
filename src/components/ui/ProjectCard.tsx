@@ -16,7 +16,7 @@ interface Props {
 export default function ProjectCard({ project, isHovered, onHover, onLeave }: Props) {
   return (
     <article
-  className={`group relative rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 bg-[var(--background)] flex flex-col ${
+  className={`group relative rounded-2xl overflow-hidden transition-all duration-500 transform bg-[var(--background)] flex flex-col ${
     project.featured ? "col-span-1" : ""
   } ${isHovered ? "glow" : "glowblue"}`}
   onMouseEnter={onHover}
@@ -50,7 +50,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
         href={project.liveUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 rounded-2xl font-medium transition-all duration-200 hover:scale-105 bg-[var(--tertiary)] text-[var(--background)]"
+        className="flex items-center gap-2 px-4 py-2 rounded-2xl font-medium transition-all duration-200 xl:hover:scale-105 bg-[var(--tertiary)] text-[var(--background)]"
       >
         <FontAwesomeIcon icon={faEye} />
         <span className="sr-only">Voir le projet</span>

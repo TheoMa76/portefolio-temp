@@ -36,7 +36,7 @@ export function ThemeToggle() {
         onClick={toggleTheme}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="group glowblue cursor-pointer rounded-full animate-float bg-[var(--background)] hover:bg-[var(--white)] p-3 transition-colors duration-300 ease-in-out"
+        className="group glowblue cursor-pointer rounded-full animate-float bg-[var(--background)] xl:hover:bg-[var(--white)] p-3 transition-colors duration-300 ease-in-out"
         aria-label={`Basculer vers le thème ${currentTheme === "dark" ? "clair" : "sombre"}`}
       >
         <FontAwesomeIcon
@@ -49,7 +49,7 @@ export function ThemeToggle() {
               ? faMoon
               : faSun
           }
-          className="w-6 h-6 text-[var(--white)] transition-all duration-300 transform group-hover:rotate-180 group-hover:text-[var(--background)]"
+          className="w-6 h-6 text-[var(--white)] transition-all duration-300 transform group-xl:hover:rotate-180 group-xl:hover:text-[var(--background)]"
         />
       </button>
     </div>

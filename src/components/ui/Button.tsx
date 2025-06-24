@@ -11,15 +11,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "inline-flex items-center justify-center rounded-2xl font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transform hover:scale-[1.02] active:scale-[0.98]",
+          "inline-flex items-center justify-center rounded-2xl font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transform xl:hover:scale-[1.02] active:scale-[0.98]",
           {
-            "bg-gradient-to-r from-[var(--tertiary)] to-[var(--tertiary)]/90 text-[var(--background)] hover:from-[var(--tertiary)]/90 hover:to-[var(--tertiary)] focus-visible:ring-[var(--tertiary)]/50 shadow-lg":
+            "bg-gradient-to-r from-[var(--tertiary)] to-[var(--tertiary)]/90 text-[var(--background)] xl:hover:from-[var(--tertiary)]/90 xl:hover:to-[var(--tertiary)] focus-visible:ring-[var(--tertiary)]/50 shadow-lg":
               variant === "default",
-            "bg-[var(--secondary)]/20 text-[var(--white)] hover:bg-[var(--secondary)]/30 focus-visible:ring-[var(--secondary)]/50 border border-[var(--secondary)]/50":
+            "bg-[var(--secondary)]/20 text-[var(--white)] xl:hover:bg-[var(--secondary)]/30 focus-visible:ring-[var(--secondary)]/50 border border-[var(--secondary)]/50":
               variant === "secondary",
-            "border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)]/10 focus-visible:ring-[var(--primary)]/50":
+            "border-2 border-[var(--primary)] text-[var(--primary)] xl:hover:bg-[var(--primary)]/10 focus-visible:ring-[var(--primary)]/50":
               variant === "outline",
-            "text-[var(--white)] hover:bg-[var(--primary)]/20 focus-visible:ring-[var(--primary)]/50":
+            "text-[var(--white)] xl:hover:bg-[var(--primary)]/20 focus-visible:ring-[var(--primary)]/50":
               variant === "ghost",
           },
           {
