@@ -49,7 +49,7 @@ export default function Home() {
                 J’ai conçu et développé sur <strong>Symfony</strong> plusieurs modules de communication sur mesure pour des cabinets d’expert‑comptable, visant à fluidifier et simplifier les échanges professionnels.
               </p>
               <p class="mb-10">
-                Ma mission a été pensée pour offrir une expérience utilisateur intuitive, rapide et accessible , ainsi qu'un code robuste et maintenable : j’ai adapté du code existant et réaliser des développements spécifiques pour répondre aux besoins uniques de chaque module.
+                Ma mission a été pensée pour offrir une expérience utilisateur intuitive, rapide et accessible , ainsi qu'un code robuste et maintenable : j’ai adapté du code existant et réalisé des développements spécifiques pour répondre aux besoins uniques de chaque module.
               </p>
               <p class="mb-10 p-6">
                 <strong>Résultat </strong>: une solution robuste, maintenable dans le temps, adoptée par les utilisateurs et permettant aux cabinets de gérer leurs communications en toute autonomie.
