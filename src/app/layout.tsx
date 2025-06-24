@@ -11,7 +11,7 @@ import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next"
 import { Navbar } from "@/components/ui/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCogs, faEnvelope, faHeart, faHome, faMailForward, faProjectDiagram, faTimeline, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCogs, faEnvelope, faHeart, faHome, faProjectDiagram, faTimeline } from "@fortawesome/free-solid-svg-icons";
 
 
 config.autoAddCss = false

@@ -33,7 +33,6 @@ const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
           <FontAwesomeIcon icon={faBars} className="text-xl" />
         </button>
 
-        {/* Menu principal */}
         <nav
           ref={ref}
           className={`fixed bottom-5 left-5 right-5 z-40 transition-all duration-300 ${
