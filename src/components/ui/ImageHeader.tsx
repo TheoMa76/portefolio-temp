@@ -36,13 +36,16 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
       <div className="mx-auto w-full min-h-screen px-4 md:px-0 py-16">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2px_1fr] min-h-screen items-center">
           <div className="flex flex-col items-center w-full justify-center space-y-6 p-4">
-            <div className="order-1 text-center">
-              <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-[var(--tertiary)] mb-2 drop-shadow-lg">
-                Développeur Full‑Stack
-              </h1>
-              <p className="text-base md:text-lg text-[var(--white)] drop-shadow-lg">
-                Spécialisé en <strong>Symfony</strong>, <strong>React.js</strong> &amp; <strong>Java</strong>
-              </p>
+            <div className="order-1 text-center w-full xs:w-10/12 lg:w-7/12">
+              <h1 className="flex flex-col gap-1 ">
+              <span className="text-3xl xl:text-5xl font-bold text-[var(--tertiary)] drop-shadow-lg">
+                Théo Maerten <span className="text-2xl xl:text-4xl">Développeur Full-Stack</span>
+              </span>
+
+              <span className="text-base md:text-lg text-[var(--white)] font-medium drop-shadow-lg">
+                Spécialisé en <strong>Symfony</strong>, <strong>React.js</strong> & <strong>Java</strong>
+              </span>
+            </h1>
             </div>
 
             <div className="order-2">
