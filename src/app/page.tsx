@@ -85,7 +85,7 @@ export default function Home() {
         items={[
           {
             title: "Beatbox",
-            content: "Je pratique le beatbox depuis 2010, créant des sons percutants et des rythmes complexes uniquement avec ma voix. J'ai participé à des compétitions en ligne et en live, développant une technique unique et un style personnel, renforçant ma créativitén, ma gestion du stress et mon esprit de compétition.",
+            content: "Je pratique le beatbox depuis 2010, créant des sons percutants et des rythmes complexes uniquement avec ma voix. J'ai participé à des compétitions en ligne et en live, développant une technique unique et un style personnel, renforçant ma créativité, ma gestion du stress et mon esprit de compétition.",
             image: "/images/beatbox.webp",
             imageAlt: "Image de Wing, un beatboxer de corée du Sud en action",
           },
