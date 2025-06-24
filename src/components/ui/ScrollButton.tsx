@@ -46,7 +46,7 @@ const ScrollButton = ({ children, className, targetId }: ScrollButtonProps) => {
       scrollTimeout.current = setTimeout(() => {
         if (isScrollingDown) {
             const mainContent = document.getElementById('main-content');
-            if (mainContent && rect.bottom > currentScroll && rect.bottom > 0) {
+            if (mainContent && rect.bottom > currentScroll && rect.bottom > 0 && currentScroll > window.innerHeight / 5) {
             isScrolling.current = true;
             window.scrollTo({
               top: mainContent.offsetTop,
