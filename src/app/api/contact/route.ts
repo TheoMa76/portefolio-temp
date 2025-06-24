@@ -4,11 +4,11 @@ import nodemailer from 'nodemailer'
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json()
+    const { name, email, message, phone } = await request.json()
 
-    if (!name || !email || !message) {
+    if (!email || !message) {
       return NextResponse.json(
-        { error: 'Tous les champs sont requis' },
+        { error: 'Les champs email et message sont requis' },
         { status: 400 }
       )
     }
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       to: process.env.SITE_MAIL_RECIEVER,
       subject: `📩 Nouveau message via le formulaire de contact de ${name}`,
       text: `Nom: ${name}\nEmail: ${email}\nMessage:\n${message}`,
-      html: buildContactMail({ name, email, message }),
+      html: buildContactMail({ name, email, message, phone }),
     }
 
     await transporter.sendMail(mailOptions)

@@ -1,4 +1,4 @@
-export function buildContactMail({ name, email, message }: { name: string, email: string, message: string }) {
+export function buildContactMail({ name, email, message, phone }: { name: string, email: string, message: string, phone?: string }) {
   const html = `
   <html>
     <head>
@@ -33,11 +33,12 @@ export function buildContactMail({ name, email, message }: { name: string, email
         
         <div style="padding: 20px;">
           <p style="margin: 0 0 10px;">
-            <span style="font-weight: bold;">👤 Nom :</span> ${name}
+            ${name ? `<span style="font-weight: bold;">👤 Nom :</span> ${name}` : ''}
           </p>
           <p style="margin: 0 0 10px;">
             <span style="font-weight: bold;">📧 Email :</span> <a href="mailto:${email}" style="color: #758bfd; text-decoration: none;">${email}</a>
           </p>
+          ${phone ? `<p style="margin: 0 0 10px;"><span style="font-weight: bold;">📞 Téléphone :</span> ${phone}</p>` : ''}
           <div style="margin: 20px 0; border-top: 1px dashed #ccc;"></div>
           <p style="margin: 0 0 8px;"><strong>💬 Message :</strong></p>
           <p style="line-height: 1.6;">${message.replace(/\n/g, '<br>')}</p>

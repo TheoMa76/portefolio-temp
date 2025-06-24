@@ -1,11 +1,16 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckCircle, faExclamationCircle, faMailBulk, faMessage, faUser } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCheckCircle,
+  faExclamationCircle,
+  faMailBulk,
+  faMessage,
+  faUser,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons"
 import { Label } from "../ui/Label"
 import { Input } from "../ui/Input"
 import { Textarea } from "../ui/Textarea"
@@ -15,12 +20,14 @@ interface FormData {
   name: string
   email: string
   message: string
+  phone?: string
 }
 
 interface FormErrors {
   name?: string
   email?: string
   message?: string
+  phone?: string
 }
 
 export default function Form() {
@@ -28,6 +35,7 @@ export default function Form() {
     name: "",
     email: "",
     message: "",
+    phone: "",
   })
 
   const [errors, setErrors] = useState<FormErrors>({})
@@ -37,9 +45,7 @@ export default function Form() {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Le nom est requis"
-    } else if (formData.name.trim().length < 2) {
+    if (formData.name.trim().length < 2 && formData.name.trim().length > 0) {
       newErrors.name = "Le nom doit contenir au moins 2 caractères"
     }
 
@@ -56,13 +62,16 @@ export default function Form() {
       newErrors.message = "Le message doit contenir au moins 10 caractères"
     }
 
+    if (formData.phone && !/^\+?\d{7,15}$/.test(formData.phone)) {
+      newErrors.phone = "Numéro de téléphone invalide"
+    }
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
 
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
-
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }))
     }
@@ -70,34 +79,29 @@ export default function Form() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
-    if (!validateForm()) {
-      return
-    }
+    if (!validateForm()) return
 
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
 
       if (!response.ok) {
-        throw new Error('Erreur lors de l\'envoi du message')
+        throw new Error("Erreur lors de l'envoi du message")
       }
 
       setIsSubmitted(true)
     } catch (error) {
-      console.error('Erreur:', error)
+      console.error("Erreur:", error)
     } finally {
       setIsSubmitting(false)
       setTimeout(() => {
         setIsSubmitted(false)
-        setFormData({ name: "", email: "", message: "" })
+        setFormData({ name: "", email: "", message: "", phone: "" })
       }, 3000)
     }
   }
@@ -115,90 +119,45 @@ export default function Form() {
   }
 
   return (
-    <div className="max-w-4xl w-full glow overflow-hidden mx-auto p-8 rounded-2xl bg-[var(--white)] backdrop-blur-sm border border-[var(--primary)]/30" id="contact">
+    <div className="max-w-4xl glow overflow-hidden mx-4 lg:mx-auto p-8 rounded-2xl bg-[var(--white)]" id="contact">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-[var(--background)] animate-float mb-2">Contactez-moi</h2>
-        <p className="text-[var(--background)] text-lg font-bold opacity-90 animate-float">Je serais ravi de travailler avec vous.</p>
+        <p className="text-[var(--background)] text-lg font-bold opacity-90 animate-float">Je serai ravi de travailler avec vous.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-        <div className="space-y-2">
-          <Label htmlFor="name" className="text-[var(--background)] font-medium flex items-center gap-2">
-            <FontAwesomeIcon icon={faUser} className="w-4 h-4 text-[var(--background)]" />
-            Nom complet
-          </Label>
-          <div className="relative">
-            <Input
-              id="name"
-              type="text"
-              value={formData.name}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("name", e.target.value)}
-              className={`
-                bg-[var(--secondary)]/50 border-2 text-[var(--background)] placeholder:text-[var(--background)]/70
-                focus:ring-2 focus:ring-[var(--tertiary)] focus:border-[var(--tertiary)]
-                transition-all duration-300
-                ${
-                  errors.name
-                    ? "border-[var(--error)] focus:border-[var(--tertiary)] focus:ring-[var(--error)]/50"
-                    : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"
-                }
-              `}
-              placeholder="Votre nom complet"
-              aria-invalid={!!errors.name}
-              aria-describedby={errors.name ? "name-error" : undefined}
-            />
-            {errors.name && (
-              <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)] animate-float" />
-              </div>
-            )}
-          </div>
-          {errors.name && (
-            <p id="name-error" className="text-[var(--error)] font-bold animate-float text-sm flex items-center gap-1 border-[var(--error)]" role="alert">
-              <FontAwesomeIcon icon={faExclamationCircle} className="w-4 h-4" />
-              {errors.name}
-            </p>
-          )}
-        </div>
+        <FormField
+          id="name"
+          label="Nom (optionel)"
+          icon={faUser}
+          type="text"
+          value={formData.name}
+          error={errors.name}
+          onChange={(v) => handleInputChange("name", v)}
+          placeholder="Votre nom"
+        />
 
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-[var(--background)] font-medium flex items-center gap-2">
-            <FontAwesomeIcon icon={faMailBulk} className="w-4 h-4 text-[var(--background)]" />
-            Adresse email
-          </Label>
-          <div className="relative">
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
-              className={`
-                bg-[var(--secondary)]/50 border-2 text-[var(--background)] placeholder:text-[var(--background)]/70
-                focus:ring-2 focus:ring-[var(--tertiary)] focus:border-[var(--tertiary)]
-                transition-all duration-300
-                ${
-                  errors.email
-                    ? "border-[var(--error)] focus:border-[var(--error)] focus:ring-[var(--error)]/50"
-                    : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"
-                }
-              `}
-              placeholder="votre@email.com"
-              aria-invalid={!!errors.email}
-              aria-describedby={errors.email ? "email-error" : undefined}
-            />
-            {errors.email && (
-              <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)] animate-float" />
-              </div>
-            )}
-          </div>
-          {errors.email && (
-            <p id="email-error" className="text-[var(--error)] font-bold animate-float text-sm flex items-center gap-1" role="alert">
-              <FontAwesomeIcon icon={faExclamationCircle} className="w-4 h-4" />
-              {errors.email}
-            </p>
-          )}
-        </div>
+        <FormField
+          id="email"
+          label="Adresse email"
+          icon={faMailBulk}
+          type="email"
+          value={formData.email}
+          error={errors.email}
+          onChange={(v) => handleInputChange("email", v)}
+          placeholder="votre@email.com"
+        />
+
+        <FormField
+          id="phone"
+          label="Téléphone (optionnel)"
+          icon={faPhone}
+          type="tel"
+          value={formData.phone || ""}
+          error={errors.phone}
+          onChange={(v) => handleInputChange("phone", v)}
+          placeholder="+33 6 12 34 56 78"
+        />
 
         <div className="space-y-2">
           <Label htmlFor="message" className="text-[var(--background)] font-medium flex items-center gap-2">
@@ -209,19 +168,14 @@ export default function Form() {
             <Textarea
               id="message"
               value={formData.message}
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleInputChange("message", e.target.value)}
+              onChange={(e) => handleInputChange("message", e.target.value)}
               rows={4}
+              placeholder="Écrivez votre message ici..."
               className={`
                 bg-[var(--secondary)]/50 border-2 text-[var(--background)] placeholder:text-[var(--background)]/70
-                focus:ring-2 focus:ring-[var(--tertiary)] focus:border-[var(--tertiary)]
-                transition-all duration-300 resize-none
-                ${
-                  errors.message
-                    ? "border-[var(--error)] focus:text-[var(--error)] focus:ring-[var(--error)]/50"
-                    : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"
-                }
+                focus:ring-2 focus:ring-[var(--tertiary)] focus:border-[var(--tertiary)] transition-all duration-300 resize-none
+                ${errors.message ? "border-[var(--error)] focus:ring-[var(--error)]/50" : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"}
               `}
-              placeholder="Écrivez votre message ici..."
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? "message-error" : undefined}
             />
@@ -240,35 +194,87 @@ export default function Form() {
         </div>
 
         <div className="flex items-center w-full md:w-1/3 mx-auto justify-between">
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className={`
-            w-full py-3 rounded-2xl font-semibold text-[var(--background)] 
-            bg-[var(--tertiary)] xl:hover:bg-[var(--background)] xl:hover:text-[var(--white)] cursor-pointer
-            xl:hover:from-[var(--tertiary)]/90 xl:hover:to-[var(--tertiary)]
-            focus:ring-4 focus:ring-[var(--tertiary)]/50
-            disabled:opacity-50 disabled:cursor-not-allowed
-            transition-all duration-300 transform xl:hover:scale-[1.02] active:scale-[0.98]
-            ${!isSubmitting ? "glowblue" : ""}
-          `}
-          aria-describedby="submit-status"
-        >
-          {isSubmitting ? (
-            <div className="flex items-center justify-center gap-2">
-              <div className="w-5 h-5 border-2 border-[var(--background)]/30 border-t-[var(--background)] rounded-full animate-spin" />
-              Envoi en cours...
-            </div>
-          ) : (
-            "Envoyer le message"
-          )}
-        </Button>
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className={`
+              w-full py-3 rounded-2xl font-semibold text-[var(--background)] 
+              bg-[var(--tertiary)] xl:hover:bg-[var(--background)] xl:hover:text-[var(--white)]
+              focus:ring-4 focus:ring-[var(--tertiary)]/50 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer
+              transition-all duration-300 transform xl:hover:scale-[1.02] active:scale-[0.98]
+            `}
+          >
+            {isSubmitting ? (
+              <div className="flex items-center justify-center gap-2">
+                <div className="w-5 h-5 border-2 border-[var(--background)]/30 border-t-[var(--background)] rounded-full animate-spin" />
+                Envoi en cours...
+              </div>
+            ) : (
+              "Envoyer le message"
+            )}
+          </Button>
         </div>
       </form>
 
       <div className="mt-6 text-center">
         <p className="text-[var(--background)] text-md">Vos données sont sécurisées et ne seront jamais partagées</p>
       </div>
+    </div>
+  )
+}
+
+function FormField({
+  id,
+  label,
+  icon,
+  type,
+  value,
+  error,
+  onChange,
+  placeholder,
+}: {
+  id: string
+  label: string
+  icon: import("@fortawesome/fontawesome-svg-core").IconDefinition
+  type: string
+  value: string
+  error?: string
+  onChange: (val: string) => void
+  placeholder?: string
+}) {
+  return (
+    <div className="space-y-2">
+      <Label htmlFor={id} className="text-[var(--background)] font-medium flex items-center gap-2">
+        <FontAwesomeIcon icon={icon} className="w-4 h-4 text-[var(--background)]" />
+        {label}
+      </Label>
+      <div className="relative">
+        <Input
+          id={id}
+          type={type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className={`
+            bg-[var(--secondary)]/50 border-2 text-[var(--background)] placeholder:text-[var(--background)]/70
+            focus:ring-2 focus:ring-[var(--tertiary)] focus:border-[var(--tertiary)] transition-all duration-300
+            ${error ? "border-[var(--error)] focus:ring-[var(--error)]/50" : "border-[var(--primary)]/50 xl:hover:border-[var(--primary)]"}
+          `}
+          placeholder={placeholder}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${id}-error` : undefined}
+        />
+        {error && (
+          <div className="absolute right-3 top-1/2 -translate-y-1/2">
+            <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)] animate-float" />
+          </div>
+        )}
+      </div>
+      {error && (
+        <p id={`${id}-error`} className="text-[var(--error)] font-bold animate-float text-sm flex items-center gap-1" role="alert">
+          <FontAwesomeIcon icon={faExclamationCircle} className="w-4 h-4" />
+          {error}
+        </p>
+      )}
     </div>
   )
 }
