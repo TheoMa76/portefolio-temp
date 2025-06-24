@@ -46,7 +46,7 @@ export const SkillsSection = ({ title }: SkillsSectionProps) => {
   ]
 
   return (
-    <section className="w-full px-4 sm:px-6 grid place-items-center" role="region" aria-labelledby={headingId}>
+    <section className="w-full px-4 sm:px-6 grid place-items-center" role="region" id="compétences" aria-labelledby={headingId}>
       <div className="w-full max-w-6xl">
         <h2
           id={headingId}

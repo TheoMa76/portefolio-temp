@@ -17,7 +17,7 @@ export const TimelineSection = ({ title, items, id, className = "" }: TimelineSe
   const headingId = id || `timeline-heading-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
-    <section className={`w-full px-4 sm:px-6 ${className}`} role="region" aria-labelledby={headingId}>
+    <section className={`w-full px-4 sm:px-6 ${className}`} role="region" aria-labelledby={headingId} id="parcours">
       <div className="w-full mx-auto">
         <h2
           id={headingId}

@@ -15,7 +15,7 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
 
   return (
     <div
-      id="image-header"
+      id="accueil"
       className="relative w-full min-h-screen overflow-hidden border-b-2 border-[var(--secondary)] glowblue mb-20"
       role="banner"
       aria-label="En-tête du portfolio de Théo Maerten"

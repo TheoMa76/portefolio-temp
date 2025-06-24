@@ -28,7 +28,7 @@ export const ParallaxSection = ({
   id,
   className = "",
 }: ParallaxSectionProps) => {
-  const headingId = id || `parallax-heading-${title.replace(/\s+/g, "-").toLowerCase()}`;
+  const headingId = id || `${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
     <section

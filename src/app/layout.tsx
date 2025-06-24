@@ -9,6 +9,9 @@ import FullPageDecoration from "@/components/layout/FullPageDecoration";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next"
+import { Navbar } from "@/components/ui/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCogs, faEnvelope, faHeart, faHome, faMailForward, faProjectDiagram, faTimeline, faUser } from "@fortawesome/free-solid-svg-icons";
 
 
 config.autoAddCss = false
@@ -91,11 +94,20 @@ export default function RootLayout({
             <FullPageDecoration />
             <header>
               <ImageHeader desktopVideoUrl="/videos/presentation-desktop.mp4" mobileVideoUrl="/videos/presentation-mobile-s.mp4" />
-                        <ThemeToggle />
+              <ThemeToggle />
+               <Navbar links={[
+                  { name: "Accueil", href: "/#accueil", icon: <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>},
+                  { name: "Compétences", href: "/#compétences", icon: <FontAwesomeIcon icon={faCogs}></FontAwesomeIcon> },
+                  { name: "Projets", href: "/#projets", icon: <FontAwesomeIcon icon={faProjectDiagram}></FontAwesomeIcon> },
+                  { name: "Parcours", href: "/#parcours", icon: <FontAwesomeIcon icon={faTimeline}></FontAwesomeIcon> },
+                  { name: "Passions", href: "/#passions", icon: <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon> },
 
+                  { name: "Contact", href: "/#contact", icon: <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon> },
+                ]} />
             </header>
             <main>
                 {children}
+               
                 <Analytics />
             </main>
             <footer>
