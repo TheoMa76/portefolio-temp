@@ -82,7 +82,7 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
                         Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js.
                       </p>
                       <p>
-                        J&apos;interviens sur toutes les phases de développement de vos projets web. De la réalisation au déploiement. Chaque ligne de code est conçu pour durer.
+                        J&apos;interviens sur toutes les phases de développement de vos projets web. De la réalisation au déploiement. Chaque ligne de code est conçue pour durer.
                       </p>
                 </div>
 
