@@ -62,7 +62,7 @@ export default function RootLayout({
           <meta name="keywords" content="Théo Maerten, développeur web, fullstack, dev, portfolio, freelance, Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation, DevOps" />
           <meta name="robots" content="max-snippet:150, nosnippet,index, follow" />
           <meta name="googlebot" content="index, follow" />
-          <meta name="google-site-verification" content="your-google-site-verification-code" />
+          <meta name="google-site-verification" content="google-site-verification=5Nn_nZRidKgj9QeWiwt6TsFbgUsllaKvjkENuIbpp_o" />
           <meta name="msvalidate.01" content="your-bing-site-verification-code" />
           <meta name="yandex-verification" content="your-yandex-site-verification-code" />
           <meta property="og:title" content="Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure"/>
