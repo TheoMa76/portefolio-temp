@@ -79,20 +79,25 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
       {project.title}
     </h3>
 
-    <div className="mb-4 text-sm text-[var(--white)] leading-relaxed flex-grow">
+    <div className="mb-4 text-md text-[var(--white)] leading-relaxed flex-grow">
       {project.description}
     </div>
 
     <div className="mb-4">
-      <div className="flex flex-wrap gap-2">
-        {project.technologies.map((tech: string, index: number) => (
-          <span
-            key={index}
-            className="px-3 py-1 text-xs font-medium rounded-2xl bg-[var(--tertiary)] text-[var(--background)]"
-          >
-            {tech}
-          </span>
-        ))}
+      <div className="grid grid-cols-2 gap-2 relative">
+        {project.technologies.map((tech: string, index: number) => {
+          const isLastAndOdd = index === project.technologies.length - 1 && project.technologies.length % 2 !== 0
+          return (
+            <div
+              key={index}
+              className={`px-3 py-2 text-sm font-medium rounded-2xl bg-[var(--tertiary)] text-[var(--background)]
+                        text-center truncate hover:bg-[var(--tertiary-dark)] transition-colors duration-200
+                        ${isLastAndOdd ? 'col-span-2 w-1/2 mx-auto' : ''}`}
+            >
+              {tech}
+            </div>
+          )
+        })}
       </div>
     </div>
 
