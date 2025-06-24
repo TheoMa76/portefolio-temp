@@ -8,6 +8,8 @@ import ImageHeader from "@/components/ui/ImageHeader";
 import FullPageDecoration from "@/components/layout/FullPageDecoration";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next"
+
 
 config.autoAddCss = false
 
@@ -94,6 +96,7 @@ export default function RootLayout({
             </header>
             <main>
                 {children}
+                <Analytics />
             </main>
             <footer>
               <CustomFooter />
