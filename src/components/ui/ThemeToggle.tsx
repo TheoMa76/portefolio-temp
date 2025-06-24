@@ -49,7 +49,7 @@ export function ThemeToggle() {
               ? faMoon
               : faSun
           }
-          className="w-6 h-6 text-[var(--white)] transition-all duration-300 transform group-xl:hover:rotate-180 group-xl:hover:text-[var(--background)]"
+          className="w-6 h-6 text-[var(--white)] transition-all duration-300 transform group-hover:rotate-180 group-hover:text-[var(--background)]"
         />
       </button>
     </div>
