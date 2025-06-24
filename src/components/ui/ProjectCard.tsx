@@ -26,7 +26,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
   tabIndex={0}
   role="article"
   aria-labelledby={`project-title-${project.id}`}
-  style={{ minHeight: "550px" }}
+  style={{ minHeight: "600px" }}
 >
   {project.featured && (
     <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-2xl text-sm font-semibold animate-float bg-[var(--background)] text-[var(--white)] shadow-lg">
