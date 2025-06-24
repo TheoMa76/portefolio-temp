@@ -14,7 +14,7 @@ const generateShape = (shape: Shape, color: string, size: number) => {
     width: size,
     height: size,
     viewBox: '0 0 100 100',
-    style: { transform: `rotate(${rotation}deg)` },
+    style: { transform: `rotate(${rotation}deg)`  },
   }
 
   switch (shape) {
@@ -33,15 +33,19 @@ const generateShape = (shape: Shape, color: string, size: number) => {
   }
 }
 
+const randomColorChoose = () => {
+  const colors = "var(--primary), var(--white)"
+  const colorsArray = colors.split(", ")
+  return colorsArray[randomBetween(0, colorsArray.length - 1)]
+}
+
 type Props = {
   shapeCount?: number
-  color?: string
   columns?: number
 }
 
 const FullPageDecoration = ({
-  shapeCount = 15,
-  color = 'var(--tertiary)',
+  shapeCount = 24,
   columns = 6,
 }: Props) => {
   const [isMounted, setIsMounted] = useState(false)
@@ -65,15 +69,15 @@ const FullPageDecoration = ({
           className="flex items-center justify-center w-full h-full"
           style={{
             transform: `translate(${offsetX}px, ${offsetY}px)`,
-            opacity: 0.7,
+            opacity: 0.6,
             pointerEvents: 'none',
           }}
         >
-          {generateShape(shape, color, size)}
+          {generateShape(shape, randomColorChoose(), size)}
         </div>
       )
     })
-  }, [isMounted, shapeCount, color])
+  }, [isMounted, shapeCount])
 
   const rows = Math.ceil(shapeCount / columns)
 

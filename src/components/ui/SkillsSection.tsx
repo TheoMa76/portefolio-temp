@@ -1,12 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSymfony, faReact, faJava, faCss3, faGolang } from "@fortawesome/free-brands-svg-icons"
+import { faSymfony, faReact, faJava, faGolang, faDocker } from "@fortawesome/free-brands-svg-icons"
 import LogoElement from "./LogoElement"
+import { faRobot } from "@fortawesome/free-solid-svg-icons"
 
 type SkillsSectionProps = {
   title: string
 }
 
 export const SkillsSection = ({ title }: SkillsSectionProps) => {
+
   const headingId = `heading-${title.replace(/\s+/g, "-").toLowerCase()}`
 
   const skills = [
@@ -27,23 +29,28 @@ export const SkillsSection = ({ title }: SkillsSectionProps) => {
       description: "Langage orienté objet et framework pour développer des applications d'entreprise robustes.",
     },
     {
-      icon: <FontAwesomeIcon icon={faCss3} className="text-5xl" />,
-      text: "CSS / Tailwind CSS",
-      description: "Technologies de stylisation pour créer des designs modernes et responsives.",
-    },
-    {
       icon: <FontAwesomeIcon icon={faGolang} className="text-5xl" />,
       text: "Go",
       description: "Langage de programmation performant pour développer des services backend scalables.",
     },
+    {
+      icon: <FontAwesomeIcon icon={faRobot} className="text-5xl" />,
+      text: "CI/CD",
+      description: "Mise en place de pipelines CI/CD avec GitHub Actions, Docker et Ansible.",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faDocker} className="text-5xl" />,
+      text: "Docker",
+      description: "Outil de conteneurisation pour automatiser le déploiement d'applications.",
+    },
   ]
 
   return (
-    <section className="w-full px-4 sm:px-6 py-12 grid place-items-center" role="region" aria-labelledby={headingId}>
+    <section className="w-full px-4 sm:px-6 grid place-items-center" role="region" aria-labelledby={headingId}>
       <div className="w-full max-w-6xl">
         <h2
           id={headingId}
-          className="text-3xl md:text-5xl font-bold mb-12 text-[var(--secondary)] text-center drop-shadow-lg animate-float"
+          className={`text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float`}
         >
           {title}
         </h2>
@@ -54,7 +61,7 @@ export const SkillsSection = ({ title }: SkillsSectionProps) => {
               key={index}
               className="bg-[var(--background)] border-2 border-[var(--primary)] p-8 rounded-2xl glowblue hover:scale-105 transition-all duration-300 group text-center"
               style={{
-                animationDelay: `${index * 0.2}s`,
+                animationDelay: `${index * 0.3}s`,
               }}
             >
               

@@ -78,8 +78,8 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
             <div className="w-px h-full bg-[var(--background)]"></div>
           </div>
 
-          <div className="flex items-center w-8/12 mx-auto justify-center p-4">
-            <div className="bg-[var(--background)] drop-shadow-lg rounded-2xl p-6 shadow-lg text-[var(--white)] text-justify space-y-4 w-full">
+          <div className="flex items-center w-full xl:w-10/12 2xl:w-8/12 mx-auto justify-center p-4">
+            <div className="bg-[var(--background)] drop-shadow-lg rounded-2xl p-6 shadow-lg text-[var(--white)] space-y-4 w-full">
               <h2
                 id="intro-title"
                 className="font-bold text-lg md:text-2xl xl:text-3xl text-[var(--primary)] text-center"
@@ -89,25 +89,31 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
               </h2>
 
               {isMobile === null ? null : (
-                <p className="text-base md:text-lg">
+                <div className="text-base 2xl:text-lg space-y-4">
                   {isMobile ? (
                     <>
-                      Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js.
-                      J&apos;interviens sur toutes les phases de développement de vos projets web.
+                      <p>
+                        Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js.
+                      </p>
+                      <p>
+                        J&apos;interviens sur toutes les phases de développement de vos projets web.
+                      </p>
                     </>
                   ) : (
                     <>
-                      Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js.
-                      J&apos;interviens sur toutes les phases de développement de vos projets web : conception UI/UX,
-                      développement back-end/API REST, intégration frontend, tests unitaires et CI/CD, jusqu&apos;au
-                      déploiement (Docker, Ansible, GitHub Actions). Fort d&apos;une expertise dans mes compétences et en
-                      bases de données SQL/NoSQL, performance, scalabilité, et sécurité, je crée des applications
-                      robustes, responsive et centrées utilisateur.
+                      <p className="ml-4">
+                        Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js. J&apos;interviens
+                        sur toutes les phases de développement de vos projets web : conception UI/UX, développement back-end/API REST,
+                        intégration frontend, tests unitaires et CI/CD, jusqu&apos;au déploiement (Docker, Ansible, GitHub Actions).
+                      </p>
+                      <p className="ml-4">
+                        Fort d&apos;une expertise dans mes compétences et en bases de données SQL/NoSQL, performance, scalabilité et
+                        sécurité, je crée des applications robustes, responsive et centrées utilisateur.
+                      </p>
                     </>
                   )}
-                </p>
+                </div>
               )}
-
               {isMobile === null
                 ? null
                 : !isMobile && (
@@ -118,7 +124,10 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
 
               {isMobile === null ? null : (
                 <div className="text-sm md:text-base xl:text-lg text-center">
-                  <ScrollButton className="italic" targetId="image-header">
+                  <ScrollButton
+                    className="italic border-transparent border-2 hover:border-[var(--primary)] transition-colors duration-200"
+                    targetId="image-header"
+                  >
                     {isMobile ? "Découvrez mon parcours" : "Découvrez mon parcours et mes réalisations"}
                   </ScrollButton>
                 </div>

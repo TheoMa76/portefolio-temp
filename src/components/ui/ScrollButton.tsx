@@ -15,11 +15,11 @@ const ScrollButton = ({ children, className, targetId }: ScrollButtonProps) => {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    const mainContent = document.getElementById('main-content');
     const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const rect = targetElement.getBoundingClientRect();
+    if (targetElement && mainContent) {
       window.scrollTo({
-        top: rect.bottom + window.innerHeight / 10,
+        top: mainContent.offsetTop,
         behavior: 'smooth'
       });
     }
@@ -45,16 +45,21 @@ const ScrollButton = ({ children, className, targetId }: ScrollButtonProps) => {
 
       scrollTimeout.current = setTimeout(() => {
         if (isScrollingDown) {
-          if (rect.bottom > currentScroll) {
-            isScrolling.current = true
+            const mainContent = document.getElementById('main-content');
+            if (mainContent && rect.bottom > currentScroll && rect.bottom > 0) {
+            isScrolling.current = true;
             window.scrollTo({
-              top: rect.bottom + window.innerHeight/10 ,
+              top: mainContent.offsetTop,
               behavior: 'smooth'
-            })
-            setTimeout(() => { isScrolling.current = false }, 1000)
-          }
+            });
+            setTimeout(() => { isScrolling.current = false }, 1000);
+            }
         } else {
-            if (Math.abs(rect.bottom) > (currentScroll / 3)) {
+          let isVisible = false
+          if (rect.bottom < currentScroll && rect.bottom > 0) {
+            isVisible = true
+          }
+            if (Math.abs(rect.bottom) < (currentScroll / 6) && isVisible) {
             isScrolling.current = true
             window.scrollTo({
               top: targetElement.offsetTop,
@@ -79,9 +84,9 @@ const ScrollButton = ({ children, className, targetId }: ScrollButtonProps) => {
 
   return (
     <button
-      className={`rounded-lg bg-[var(--primary)] drop-shadow-md px-5 cursor-pointer my-2
+      className={`rounded-2xl bg-[var(--primary)] drop-shadow-md px-5 cursor-pointer my-2 py-2
         transition transform duration-200 ease-in-out
-        hover:bg-[var(--primary-dark)]
+        hover:bg-[var(--white)] hover:shadow-lg hover:text-[var(--background)]
         active:scale-95 active:translate-y-0.5 hover:border-[var(--secondary)] hover:border-2
         ${className}`}
       onClick={handleClick}

@@ -6,6 +6,8 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import ImageHeader from "@/components/ui/ImageHeader";
 import FullPageDecoration from "@/components/layout/FullPageDecoration";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 
 config.autoAddCss = false
 
@@ -21,15 +23,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Théo Maerten | Portfolio",
-  metadataBase: new URL("https://theomaerten.com"),
+  metadataBase: new URL(process.env.SITE_URL || "https://theomaerten.fr"),
   openGraph: {
     title: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
     description: "Portfolio de Théo Maerten, un développeur web passionné.",
-    url: "https://theomaerten.com",
+    url: process.env.SITE_URL || "https://theomaerten.fr",
     siteName: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
     images: [
       {
-        url: "https://theomaerten.com/og-image.png",
+        url: `${process.env.SITE_URL || "https://theomaerten.fr"}/images/theomaerten.webp`,
         width: 1200,
         height: 630,
         alt: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  description: "Portfolio de Théo Maerten, un développeur web passionné.",
+  description: "Portfolio de Théo Maerten, un développeur web full-stack ( Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation ) passionné.",
 };
 
 export default function RootLayout({
@@ -47,20 +49,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="fr" data-theme="light">
+      <html lang="fr" suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <FullPageDecoration />
-          <header>
-            <ImageHeader desktopVideoUrl="/videos/presentation-desktop.mp4" mobileVideoUrl="/videos/presentation-mobile-s.mp4" />
-          </header>
-          <main>
-              {children}
-          </main>
-          <footer>
-            <CustomFooter />
-          </footer>
+          <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem>
+            <FullPageDecoration />
+            <header>
+              <ImageHeader desktopVideoUrl="/videos/presentation-desktop.mp4" mobileVideoUrl="/videos/presentation-mobile-s.mp4" />
+                        <ThemeToggle />
+
+            </header>
+            <main>
+                {children}
+            </main>
+            <footer>
+              <CustomFooter />
+            </footer>
+          </ThemeProvider>
         </body>
       </html>
   );

@@ -44,38 +44,52 @@ export default function PortfolioProjects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="projects-heading">
+    <section className="px-4 sm:px-6 lg:px-8" aria-labelledby="projects-heading">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-16">
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed text-[var(--white)]">
+          <p className="text-xl max-w-3xl mx-auto leading-relaxed text-[var(--background)] bg-[var(--secondary)] bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg">
             Découvrez une sélection de mes réalisations web, alliant créativité, performance technique et expérience utilisateur optimale.
           </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              isHovered={hoveredProject === project.id}
-              onHover={() => setHoveredProject(project.id)}
-              onLeave={() => setHoveredProject(null)}
-            />
-          ))}
+          {projects.map((project, index) => {
+            const isLast = index === projects.length - 1
+            const isOdd = projects.length % 2 !== 0
+
+            return (
+              <div
+                key={project.id}
+                className={`
+                  ${isLast && isOdd ? "xl:col-span-1 xl:max-w-full md:col-span-2 md:max-w-1/2 md:mx-auto" : ""}
+                `}
+              >
+                <ProjectCard
+                  project={project}
+                  isHovered={hoveredProject === project.id}
+                  onHover={() => setHoveredProject(project.id)}
+                  onLeave={() => setHoveredProject(null)}
+                />
+              </div>
+            )
+          })}
         </div>
 
-        <div className="text-center mt-16">
-            <p className="text-lg mb-6 text-[var(--white)]">
+        <div className="text-center mt-20">
+            <p className="text-lg text-[var(--background)] bg-[var(--secondary)] p-6 rounded-2xl shadow-lg max-w-3xl mx-auto">
             Vous recherchez un développeur passionné, créatif et rigoureux pour concrétiser vos projets web&nbsp;? Fort d’une expertise en React, Next.js, Tailwind CSS et développement fullstack, je mets mes compétences au service de votre réussite digitale. Discutons ensemble de vos besoins et donnons vie à vos idées&nbsp;!
             </p>
-          <a
-            href="#contact"
-            className="bg-[var(--tertiary)] text-[var(--background)] inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 glow"
-          >
-            Contactez-moi
-          </a>
+          </div>
+          <div className="flex justify-center mt-20 animate-float">
+              <a
+              href="#contact"
+              className="bg-[var(--tertiary)] mx-auto text-[var(--background)] inline-flex items-center px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 glow hover:glowblue"
+            >
+              Contactez-moi
+            </a>
+          </div>
+          
         </div>
-      </div>
     </section>
   )
 }

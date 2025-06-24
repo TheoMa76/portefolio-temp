@@ -15,7 +15,7 @@ const Textblock = ({ title, children }: Props) => {
       aria-labelledby={headingId}
     >
       <div
-        className="w-full border-t-2 border-[var(--tertiary)] bg-[var(--background)] text-[var(--white)] p-6 rounded-3xl shadow-2xl glow"
+        className="w-full border-t-2 border-[var(--tertiary)] bg-[var(--background)] text-[var(--white)] p-6 rounded-2xl shadow-2xl glow"
         style={{
           boxShadow: `0 20px 25px -5px var(--tertiary), 0 10px 10px -5px var(--white)`,
         }}

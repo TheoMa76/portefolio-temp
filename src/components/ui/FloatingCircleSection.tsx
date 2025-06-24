@@ -36,7 +36,6 @@ export const FloatingCircleSection = ({
       </h2>
 
       <div className="relative w-full max-w-4xl mx-auto h-96 md:h-[500px]">
-        {/* Central element */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
           <div 
             className="w-48 h-48 md:w-64 md:h-64 bg-gradient-to-br from-[var(--primary)] to-[var(--tertiary)] rounded-full glow flex items-center justify-center animate-float"

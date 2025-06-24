@@ -1,7 +1,7 @@
-import { faFreeCodeCamp, faGithub, faHubspot, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "../ui/Link";
-import { faCircleUser, faCode, faCodeBranch } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser} from "@fortawesome/free-solid-svg-icons";
 
 export default function CustomFooter() {
   return (
