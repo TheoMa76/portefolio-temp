@@ -128,7 +128,7 @@ export default function Form() {
       <form onSubmit={handleSubmit} className="space-y-6" noValidate>
         <FormField
           id="name"
-          label="Nom (optionel)"
+          label="Nom (optionnel)"
           icon={faUser}
           type="text"
           value={formData.name}
