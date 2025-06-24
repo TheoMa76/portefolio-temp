@@ -122,7 +122,7 @@ export default function Form() {
     <div className="max-w-4xl glow overflow-hidden mx-4 lg:mx-auto p-8 rounded-2xl bg-[var(--white)]" id="contact">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-[var(--background)] animate-float mb-2">Contactez-moi</h2>
-        <p className="text-[var(--background)] text-lg font-bold opacity-90 animate-float">Je serai ravi de travailler avec vous.</p>
+        <p className="text-[var(--background)] text-lg font-bold opacity-90">Je serai ravi de travailler avec vous.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6" noValidate>
@@ -181,12 +181,12 @@ export default function Form() {
             />
             {errors.message && (
               <div className="absolute right-3 top-3">
-                <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)] animate-float" />
+                <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)]" />
               </div>
             )}
           </div>
           {errors.message && (
-            <p id="message-error" className="text-[var(--error)] animate-float font-bold text-sm flex items-center gap-1" role="alert">
+            <p id="message-error" className="text-[var(--error)] font-bold text-sm flex items-center gap-1" role="alert">
               <FontAwesomeIcon icon={faExclamationCircle} className="w-4 h-4" />
               {errors.message}
             </p>
@@ -265,12 +265,12 @@ function FormField({
         />
         {error && (
           <div className="absolute right-3 top-1/2 -translate-y-1/2">
-            <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)] animate-float" />
+            <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 text-[var(--error)]" />
           </div>
         )}
       </div>
       {error && (
-        <p id={`${id}-error`} className="text-[var(--error)] font-bold animate-float text-sm flex items-center gap-1" role="alert">
+        <p id={`${id}-error`} className="text-[var(--error)] font-bold text-sm flex items-center gap-1" role="alert">
           <FontAwesomeIcon icon={faExclamationCircle} className="w-4 h-4" />
           {error}
         </p>
