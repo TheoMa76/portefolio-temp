@@ -1,9 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import ScrollButton from "./ScrollButton"
 import Image from "next/image"
-import useIsMobile from "@/app/hooks/useIsMobile"
+import {useIsMobile} from "@/app/hooks/useIsMobile"
 
 type Props = {
   mobileVideoUrl: string
@@ -11,20 +10,8 @@ type Props = {
 }
 
 const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
-  const [videoUrl, setVideoUrl] = useState(desktopVideoUrl)
   const isMobile = useIsMobile()
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)")
-    const handleMediaChange = (e: MediaQueryListEvent) => {
-      setVideoUrl(e.matches ? mobileVideoUrl : desktopVideoUrl)
-    }
-
-    setVideoUrl(mediaQuery.matches ? mobileVideoUrl : desktopVideoUrl)
-    mediaQuery.addEventListener("change", handleMediaChange)
-
-    return () => mediaQuery.removeEventListener("change", handleMediaChange)
-  }, [desktopVideoUrl, mobileVideoUrl])
+  const videoUrl = isMobile ? mobileVideoUrl : desktopVideoUrl
 
   return (
     <div
@@ -87,40 +74,19 @@ const ImageHeader = ({ mobileVideoUrl, desktopVideoUrl }: Props) => {
               >
                 Bienvenue sur mon portfolio
               </h2>
-
-              {isMobile === null ? null : (
                 <div className="text-base 2xl:text-lg space-y-4">
-                  {isMobile ? (
-                    <>
                       <p>
                         Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js.
                       </p>
                       <p>
-                        J&apos;interviens sur toutes les phases de développement de vos projets web.
+                        J&apos;interviens sur toutes les phases de développement de vos projets web. De la réalisation au déploiement. Chaque étape est conçu pour durer.
                       </p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="ml-4">
-                        Passionné et rigoureux, spécialisé en Symfony, PHP, Java, JavaScript, React.js, et Node.js. J&apos;interviens
-                        sur toutes les phases de développement de vos projets web : conception UI/UX, développement back-end/API REST,
-                        intégration frontend, tests unitaires et CI/CD, jusqu&apos;au déploiement (Docker, Ansible, GitHub Actions).
-                      </p>
-                      <p className="ml-4">
-                        Fort d&apos;une expertise dans mes compétences et en bases de données SQL/NoSQL, performance, scalabilité et
-                        sécurité, je crée des applications robustes, responsive et centrées utilisateur.
-                      </p>
-                    </>
-                  )}
                 </div>
-              )}
-              {isMobile === null
-                ? null
-                : !isMobile && (
-                    <p className="font-bold text-[var(--primary)] text-lg md:text-xl xl:text-2xl text-center">
-                      Ensemble, donnons vie à vos idées avec une stack moderne et agile.
-                    </p>
-                  )}
+
+                <p className="font-bold text-[var(--primary)] text-lg md:text-xl xl:text-2xl text-center">
+                  Ensemble, donnons vie à vos idées.
+                </p>
+
 
               {isMobile === null ? null : (
                 <div className="text-sm md:text-base xl:text-lg text-center">

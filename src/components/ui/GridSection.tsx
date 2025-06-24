@@ -75,7 +75,7 @@ const GridCard = ({ title, content, icon, animationDelay = 0 }: GridCardProps) =
     style={{ animationDelay: `${animationDelay}s` }}
   >
     {icon && <div className={`${isDarkTheme ? 'text-[var(--tertiary)]' : 'text-[var(--white)]'} mb-4 group-hover:animate-float`}>{icon}</div>}
-    <h3 className="text-xl font-bold mb-3 text-[var(--secondary)]">{title}</h3>
+    <h3 className="text-xl font-bold mb-3 text-[var(--tertiary)]">{title}</h3>
     <div className="text-[var(--white)] leading-relaxed">{content}</div>
   </div>
 );

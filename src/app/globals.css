@@ -125,10 +125,3 @@ html {
 html, body {
   overflow-x: hidden;
 }
-
-[data-placeholder]:empty:before {
-  content: attr(data-placeholder);
-  color: rgba(255, 255, 255, 0.4);
-  pointer-events: none;
-  display: block;
-}

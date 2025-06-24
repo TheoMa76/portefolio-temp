@@ -16,7 +16,7 @@ interface Props {
 export default function ProjectCard({ project, isHovered, onHover, onLeave }: Props) {
   return (
     <article
-  className={`group relative rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 bg-[var(--primary)] flex flex-col ${
+  className={`group relative rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 bg-[var(--background)] flex flex-col ${
     project.featured ? "col-span-1" : ""
   } ${isHovered ? "glow" : "glowblue"}`}
   onMouseEnter={onHover}
@@ -29,7 +29,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
   style={{ minHeight: "550px" }}
 >
   {project.featured && (
-    <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-2xl text-sm font-semibold animate-float bg-[var(--background)] text-[var(--secondary)] shadow-lg">
+    <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-2xl text-sm font-semibold animate-float bg-[var(--background)] text-[var(--white)] shadow-lg">
       ⭐ Mon préféré
     </div>
   )}
@@ -74,7 +74,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
   <div className="p-6 flex flex-col flex-grow">
     <h3
       id={`project-title-${project.id}`}
-      className="text-xl font-bold mb-3 text-[var(--background)]"
+      className="text-xl font-bold mb-3 text-[var(--tertiary)]"
     >
       {project.title}
     </h3>
@@ -88,7 +88,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
         {project.technologies.map((tech: string, index: number) => (
           <span
             key={index}
-            className="px-3 py-1 text-xs font-medium rounded-2xl bg-[var(--background)] text-[var(--white)]"
+            className="px-3 py-1 text-xs font-medium rounded-2xl bg-[var(--tertiary)] text-[var(--background)]"
           >
             {tech}
           </span>

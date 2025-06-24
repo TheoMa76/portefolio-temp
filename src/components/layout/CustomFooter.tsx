@@ -7,10 +7,9 @@ export default function CustomFooter() {
   return (
     <div className="w-full mt-30 bg-[var(--primary)] text-[var(--white)] py-6 min-h-[150px] shadow-lg border-t-2 border-[var(--secondary)] overflow-hidden glowblue">
       <div className="container mx-auto grid gap-6 md:grid-cols-3 items-center text-center md:text-left">
-        <div className="space-y-1">
+        <div className="space-y-1 text-[var(--background)]">
           <p className="font-semibold">Contact</p>
           <p>theoma.dev@gmail.com</p>
-          <p>06 95 88 25 20</p>
         </div>
 
         <div className="flex justify-center space-x-6">
@@ -43,7 +42,7 @@ export default function CustomFooter() {
           </Link>
         </div>
 
-        <div className="text-md md:text-right">
+        <div className="text-md md:text-right text-[var(--background)]">
           © {new Date().getFullYear()} Théo Maerten. Tous droits réservés.
         </div>
       </div>

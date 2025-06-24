@@ -97,7 +97,7 @@ export const ParallaxSection = ({
           <h2 id={headingId} className="text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float">
             {title}
           </h2>
-          <p className="text-xl md:text-2xl text-[var(--background)] bg-[var(--secondary)] rounded-2xl py-5 font-bold drop-shadow-lg mb-10">
+          <p className="text-xl md:text-2xl text-[var(--white)] bg-[var(--secondary)] rounded-2xl py-5 font-bold drop-shadow-lg mb-10">
             {subtitle}
           </p>
         </div>

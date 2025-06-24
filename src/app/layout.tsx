@@ -53,7 +53,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem>
+          <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
             <FullPageDecoration />
             <header>
               <ImageHeader desktopVideoUrl="/videos/presentation-desktop.mp4" mobileVideoUrl="/videos/presentation-mobile-s.mp4" />
