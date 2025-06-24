@@ -22,11 +22,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Théo Maerten | Portfolio",
+  title: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
   metadataBase: new URL(process.env.SITE_URL || "https://theomaerten.fr"),
   openGraph: {
     title: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
-    description: "Portfolio de Théo Maerten, un développeur web passionné.",
+    description: "Portfolio de Théo Maerten, Développeur full-stack Symfony, React.js, Next.js, Java, Spring, Go, Docker, Ansible, CI/CD, DevOps",
     url: process.env.SITE_URL || "https://theomaerten.fr",
     siteName: "Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure",
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     type: "website",
   },
-  description: "Portfolio de Théo Maerten, un développeur web full-stack ( Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation ) passionné.",
+  description: "Portfolio de Théo Maerten, un développeur web full-stack ( Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation ) passionné. Créons ensemble des sites web et applications sur mesure.",
 };
 
 export default function RootLayout({
@@ -59,14 +59,14 @@ export default function RootLayout({
           <meta name="description" content={metadata.description ?? ""} />
           <meta name="theme-color" content="#758bfd" />
           <meta name="author" content="Théo Maerten" />
-          <meta name="keywords" content="Théo Maerten, développeur web, fullstack, dev, portfolio, freelance, Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation" />
+          <meta name="keywords" content="Théo Maerten, développeur web, fullstack, dev, portfolio, freelance, Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation, DevOps" />
           <meta name="robots" content="max-snippet:150, nosnippet,index, follow" />
           <meta name="googlebot" content="index, follow" />
           <meta name="google-site-verification" content="your-google-site-verification-code" />
           <meta name="msvalidate.01" content="your-bing-site-verification-code" />
           <meta name="yandex-verification" content="your-yandex-site-verification-code" />
-          <meta property="og:title" content="Théo Maerten | Portfolio"/>
-          <meta property="og:description" content="Portfolio de Théo Maerten, un développeur web passionné."/>
+          <meta property="og:title" content="Théo Maerten | Développeur Full-Stack Freelance | Création de sites web et applications sur mesure"/>
+          <meta property="og:description" content="Portfolio de Théo Maerten, Développeur full-stack Symfony, React.js, Next.js, Java, Spring, Go, Docker, Ansible, CI/CD, DevOps"/>
           <meta property="og:image" content={`${process.env.SITE_URL}/images/theomaerten.webp`}/>
           <meta property="og:url" content={`${process.env.SITE_URL}`}/>
           <meta name="twitter:card" content="summary_large_image"/>
