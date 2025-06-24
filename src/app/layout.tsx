@@ -50,6 +50,41 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="fr" suppressHydrationWarning>
+        <head>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+          <link rel="canonical" href={`${process.env.SITE_URL}`} />
+          <title>{String(metadata.title ?? "")}</title>
+          <meta name="description" content={metadata.description ?? ""} />
+          <meta name="theme-color" content="#758bfd" />
+          <meta name="author" content="Théo Maerten" />
+          <meta name="keywords" content="Théo Maerten, développeur web, fullstack, dev, portfolio, freelance, Symfony, React, Node.js, Next.js, Java, Spring, Go, CI/CD, Ansible, Docker, Automatisation" />
+          <meta name="robots" content="max-snippet:150, nosnippet,index, follow" />
+          <meta name="googlebot" content="index, follow" />
+          <meta name="google-site-verification" content="your-google-site-verification-code" />
+          <meta name="msvalidate.01" content="your-bing-site-verification-code" />
+          <meta name="yandex-verification" content="your-yandex-site-verification-code" />
+          <meta property="og:title" content="Théo Maerten | Portfolio"/>
+          <meta property="og:description" content="Portfolio de Théo Maerten, un développeur web passionné."/>
+          <meta property="og:image" content={`${process.env.SITE_URL}/images/theomaerten.webp`}/>
+          <meta property="og:url" content={`${process.env.SITE_URL}`}/>
+          <meta name="twitter:card" content="summary_large_image"/>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Théo Maerten | Portfolio",
+                "url": process.env.SITE_URL || "https://theomaerten.fr",
+                "description": "Portfolio de Théo Maerten, un développeur web passionné.",
+                "image": `${process.env.SITE_URL || "https://theomaerten.fr"}/images/theomaerten.webp`
+              }),
+            }}
+          />
+
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
