@@ -206,7 +206,9 @@ export default function Home() {
         ]}
 
       />
-      <Form />
+      <div className="w-full max-w-6xl mx-auto p-4 xl:p-0">
+        <Form />
+      </div>
     </main>
   );
 }

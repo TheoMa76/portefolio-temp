@@ -108,7 +108,7 @@ export default function Form() {
 
   if (isSubmitted) {
     return (
-      <div className="max-w-md mx-auto p-8 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] glow animate-float">
+      <div className="p-8 rounded-2xl bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] glow animate-float">
         <div className="text-center text-[var(--white)]">
           <FontAwesomeIcon icon={faCheckCircle} className="w-16 h-16 mx-auto mb-4 text-[var(--tertiary)]" />
           <h3 className="text-2xl font-bold mb-2">Message envoyé !</h3>
@@ -119,7 +119,7 @@ export default function Form() {
   }
 
   return (
-    <div className="max-w-4xl glow overflow-hidden mx-4 lg:mx-auto p-8 rounded-2xl bg-[var(--white)]" id="contact">
+    <div className="glow p-8 rounded-2xl bg-[var(--white)]" id="contact">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-[var(--background)] animate-float mb-2">Contactez-moi</h2>
         <p className="text-[var(--background)] text-lg font-bold opacity-90">Je serai ravi de travailler avec vous.</p>

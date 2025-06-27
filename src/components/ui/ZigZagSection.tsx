@@ -23,8 +23,8 @@ export const ZigzagSection = ({ title, items, id, className = "" }: ZigzagSectio
   const headingId = id || `zigzag-heading-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
-    <section className={`w-full px-4 sm:px-6 ${className}`} role="region" aria-labelledby={headingId} id="passions">
-      <div className="w-full max-w-6xl mx-auto">
+    <section className={`w-full max-w-6xl px-4 xl:px-0 mx-auto ${className}`} role="region" aria-labelledby={headingId} id="passions">
+      <div className="w-full  mx-auto">
         <h2
           id={headingId}
           className="text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float"
@@ -67,7 +67,7 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
         <ZigzagImage 
           src={item.image} 
           alt={item.imageAlt || item.title}
-          hasLink={!!item.url}
+          url={item.url}
         />
       </div>
     </>
@@ -77,21 +77,9 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
     <div
       className={`flex flex-col ${
         index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-      } items-center gap-8 lg:gap-12`}
-    >
-      {item.url ? (
-        <a 
-          href={item.url} 
-          aria-label={item.urlText || item.title}
-          className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {content}
-        </a>
-      ) : (
-        content
-      )}
+      } items-stretch gap-8 min-h-[300px] lg:gap-12`}
+    >      
+      {content}
     </div>
   );
 };
@@ -99,28 +87,27 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
 type ZigzagImageProps = {
   src?: string;
   alt: string;
-  hasLink?: boolean;
+  url?: string;
 
 };
 
-const ZigzagImage = ({ src, alt, hasLink }: ZigzagImageProps) => (
-  <div className="w-full h-64 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-2xl glowblue animate-float flex items-center justify-center relative">
+const ZigzagImage = ({ src, alt, url }: ZigzagImageProps) => (
+  <div className="w-full h-full bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-2xl glowblue flex items-center justify-center relative overflow-hidden">
     {src ? (
       <Image
         src={src}
         alt={alt}
-        width={500}
-        height={500}
-        className="w-full h-full object-cover rounded-2xl"
+        fill
+        className="object-cover rounded-2xl"
         loading="lazy"
       />
     ) : (
       <div className="text-6xl text-[var(--white)]" aria-hidden="true">🎨</div>
     )}
-    {hasLink && (
-      <div className="absolute top-4 right-4 bg-[var(--tertiary)] text-[var(--background)] p-2 rounded-full">
-        <FontAwesomeIcon icon={faExternalLink} className="w-4 h-4" />
-      </div>
+    {url != undefined && url !== "" &&(
+      <a href={`${url}`} target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le lien externe"  className="absolute hover:scale-120 cursor-pointer animate-bounce top-4 right-4 bg-[var(--tertiary)] text-[var(--background)] p-2 rounded-full">
+          <FontAwesomeIcon icon={faExternalLink} className="w-4 h-4" />
+      </a>
     )}
   </div>
 );

@@ -18,11 +18,11 @@ export const GridSection = ({ title, items, id, className = "" }: GridSectionPro
 
   return (
     <section 
-      className={`w-full px-4 sm:px-6 py-12 grid place-items-center ${className}`} 
+      className={`w-full max-w-6xl px-4 xl:px-0 mx-auto py-12 grid place-items-center ${className}`} 
       role="region" 
       aria-labelledby={headingId}
     >
-      <div className="w-full max-w-6xl">
+      <div className="w-full">
         <h2
           id={headingId}
           className="text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float"
@@ -39,7 +39,7 @@ export const GridSection = ({ title, items, id, className = "" }: GridSectionPro
                 key={`${headingId}-item-${index}`}
                 className={
                   isLast && isOdd
-                    ? "md:max-w-7/12 xl:max-w-full md:col-span-2 md:mx-auto lg:col-span-1 lg:mx-0"
+                    ? "md:max-w-[424px] lg:max-w-full md:col-span-2 md:mx-auto lg:col-span-1 lg:mx-0"
                     : ""
                 }
               >
@@ -71,7 +71,7 @@ const isDarkTheme = typeof document !== "undefined" && document.documentElement.
 
 const GridCard = ({ title, content, icon, animationDelay = 0 }: GridCardProps) => (
   <div
-    className="bg-[var(--background)] border-2 border-[var(--primary)] p-6 rounded-2xl glowblue transition-all duration-300 group"
+    className="bg-[var(--background)] min-h-[220px] border-2 border-[var(--primary)] p-6 rounded-2xl glowblue transition-all duration-300 group"
     style={{ animationDelay: `${animationDelay}s` }}
   >
     {icon && <div className={`${isDarkTheme ? 'text-[var(--tertiary)]' : 'text-[var(--white)]'} mb-4`}>{icon}</div>}

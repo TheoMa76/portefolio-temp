@@ -44,10 +44,10 @@ export default function PortfolioProjects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8" aria-labelledby="projets" id="projets">
-      <div className="max-w-7xl mx-auto">
+    <section className="max-w-6xl px-4 xl:px-0 mx-auto" aria-labelledby="projets" id="projets">
+      <div className="w-full mx-auto">
         <header className="text-center mb-16">
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed text-[var(--white)] bg-[var(--background)] bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg">
+          <p className="text-xl max-w-5xl mx-auto leading-relaxed text-[var(--white)] bg-[var(--background)] bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg">
             Découvrez une sélection de mes réalisations web, alliant créativité, performance technique et expérience utilisateur optimale.
           </p>
         </header>
@@ -76,7 +76,7 @@ export default function PortfolioProjects() {
         </div>
 
         <div className="text-center mt-20">
-            <p className="text-lg text-[var(--white)] bg-[var(--background)] p-6 rounded-2xl shadow-lg max-w-3xl mx-auto">
+            <p className="text-lg text-[var(--white)] bg-[var(--background)] p-6 rounded-2xl shadow-lg max-w-5xl mx-auto">
             Vous recherchez un développeur passionné, créatif et rigoureux pour concrétiser vos projets web&nbsp;? Fort d’une expertise en React, Next.js, Tailwind CSS et développement fullstack, je mets mes compétences au service de votre réussite digitale. Discutons ensemble de vos besoins et donnons vie à vos idées&nbsp;!
             </p>
           </div>

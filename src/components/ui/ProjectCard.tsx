@@ -16,7 +16,7 @@ interface Props {
 export default function ProjectCard({ project, isHovered, onHover, onLeave }: Props) {
   return (
     <article
-  className={`group relative rounded-2xl overflow-hidden transition-all duration-500 transform bg-[var(--background)] flex flex-col ${
+  className={`group border-2 border-[var(--primary)] relative rounded-2xl overflow-hidden transition-all duration-500 transform bg-[var(--background)] flex flex-col ${
     project.featured ? "col-span-1" : ""
   } ${isHovered ? "glow" : "glowblue"}`}
   onMouseEnter={onHover}
@@ -26,7 +26,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
   tabIndex={0}
   role="article"
   aria-labelledby={`project-title-${project.id}`}
-  style={{ minHeight: "600px" }}
+  style={{ minHeight: "620px" }}
 >
   {project.featured && (
     <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-2xl text-sm font-semibold animate-float bg-[var(--background)] text-[var(--white)] shadow-lg">

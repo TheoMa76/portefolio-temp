@@ -32,7 +32,7 @@ export const ParallaxSection = ({
 
   return (
     <section
-      className={`w-full px-4 sm:px-6 relative overflow-visible min-h-screen flex items-center ${className}`}
+      className={`w-full px-4 relative overflow-visible min-h-screen flex items-center ${className}`}
       role="region"
       aria-labelledby={headingId}
     >
@@ -58,7 +58,7 @@ export const ParallaxSection = ({
         })}
       </div>
 
-      <div className="w-full max-w-4xl mx-auto relative z-10">
+      <div className="w-full mx-auto max-w-5xl relative z-10">
         <div className="text-center mb-8">
           <h2 id={headingId} className="text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float">
             {title}
@@ -68,7 +68,7 @@ export const ParallaxSection = ({
           </p>
         </div>
 
-        <div className="bg-[var(--background)]/90 backdrop-blur-sm border-2 border-[var(--primary)] p-8 md:p-12 rounded-2xl glow">
+        <div className="bg-[var(--background)]/90 backdrop-blur-sm border-2 border-[var(--primary)] p-8 rounded-2xl glow">
           <div className="text-[var(--white)] leading-relaxed text-lg text-center">{content}</div>
         </div>
       </div>

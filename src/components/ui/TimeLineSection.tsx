@@ -17,7 +17,7 @@ export const TimelineSection = ({ title, items, id, className = "" }: TimelineSe
   const headingId = id || `timeline-heading-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
-    <section className={`w-full px-4 sm:px-6 ${className}`} role="region" aria-labelledby={headingId} id="parcours">
+    <section className={`w-full px-4 xl:px-0 ${className}`} role="region" aria-labelledby={headingId} id="parcours">
       <div className="w-full mx-auto">
         <h2
           id={headingId}
@@ -54,8 +54,8 @@ type TimelineItemProps = {
 };
 
 const TimelineItem = ({ item, index, isLast }: TimelineItemProps) => (
-  <div className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "" : "lg:flex-row-reverse"}`}>
-    <div className="flex-1 w-full px-4 lg:px-8">
+  <div className={`flex max-w-6xl mx-auto flex-col lg:flex-row items-center ${index % 2 === 0 ? "" : "lg:flex-row-reverse"}`}>
+    <div className="flex-1 w-full">
       <div
         className={`bg-[var(--background)] p-6 md:p-8 rounded-2xl border-2 border-[var(--primary)] glow transition-all duration-300 ${
           index % 2 === 0 ? "lg:mr-4" : "lg:ml-4"
