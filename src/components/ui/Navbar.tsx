@@ -27,7 +27,7 @@ const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
           className={`fixed left-5 bottom-5 z-50 flex items-center justify-center w-12 h-12 bg-[var(--background)]/50 text-[var(--white)] rounded-2xl shadow-lg backdrop-blur-xs transition-all duration-300 ${
             isOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
           }`}
-          aria-label="Toggle navigation menu"
+          aria-label="Ouvrir le menu de navigation"
           style={{ transformOrigin: "center" }}
         >
           <FontAwesomeIcon icon={faBars} className="text-xl" />
@@ -58,7 +58,7 @@ const Navbar = React.forwardRef<HTMLDivElement, NavbarProps>(
                 <button
                   onClick={toggleMenu}
                   className="flex items-center justify-center w-10 h-10 bg-[var(--background)]/50 text-[var(--white)] rounded-full shadow-lg backdrop-blur-xs hover:scale-110 transition-transform"
-                  aria-label="Close menu"
+                  aria-label="Fermer le menu"
                 >
                   <FontAwesomeIcon icon={faTimes} />
                 </button>

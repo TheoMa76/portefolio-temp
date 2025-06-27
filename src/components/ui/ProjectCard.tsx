@@ -25,7 +25,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
   onBlur={onLeave}
   tabIndex={0}
   role="article"
-  aria-labelledby={`project-title-${project.id}`}
+  aria-labelledby={`project-title-${project.title}`}
   style={{ minHeight: "620px" }}
 >
   {project.featured && (

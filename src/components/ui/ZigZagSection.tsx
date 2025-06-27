@@ -24,7 +24,7 @@ export const ZigzagSection = ({ title, items, id, className = "" }: ZigzagSectio
 
   return (
     <section className={`w-full max-w-6xl px-4 xl:px-0 mx-auto ${className}`} role="region" aria-labelledby={headingId} id="passions">
-      <div className="w-full  mx-auto">
+      <div className="w-full mx-auto">
         <h2
           id={headingId}
           className="text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float"
@@ -63,13 +63,15 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
           <div className="text-[var(--white)] leading-relaxed text-lg">{item.content}</div>
         </div>
       </div>
-      <div className="flex-1 relative">
-        <ZigzagImage 
-          src={item.image} 
-          alt={item.imageAlt || item.title}
-          url={item.url}
-        />
-      </div>
+      {item.image && (
+        <div className="flex-1 relative min-h-[200px] md:min-h-[300px]">
+          <ZigzagImage 
+            src={item.image} 
+            alt={item.imageAlt || item.title}
+            url={item.url}
+          />
+        </div>
+      )}
     </>
   );
 
@@ -77,7 +79,7 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
     <div
       className={`flex flex-col ${
         index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-      } items-stretch gap-8 min-h-[300px] lg:gap-12`}
+      } items-stretch gap-8 lg:gap-12`}
     >      
       {content}
     </div>
@@ -85,28 +87,35 @@ const ZigzagItem = ({ item, index }: ZigzagItemProps) => {
 };
 
 type ZigzagImageProps = {
-  src?: string;
+  src: string;
   alt: string;
   url?: string;
-
 };
 
 const ZigzagImage = ({ src, alt, url }: ZigzagImageProps) => (
-  <div className="w-full h-full bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-2xl glowblue flex items-center justify-center relative overflow-hidden">
-    {src ? (
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover rounded-2xl"
-        loading="lazy"
-      />
-    ) : (
-      <div className="text-6xl text-[var(--white)]" aria-hidden="true">🎨</div>
-    )}
-    {url != undefined && url !== "" &&(
-      <a href={`${url}`} target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le lien externe"  className="absolute hover:scale-120 cursor-pointer animate-bounce top-4 right-4 bg-[var(--tertiary)] text-[var(--background)] p-2 rounded-full">
-          <FontAwesomeIcon icon={faExternalLink} className="w-4 h-4" />
+  <div className="w-full lg:h-full h-64 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-2xl glowblue flex items-center justify-center relative overflow-hidden">
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover rounded-2xl"
+      loading="lazy"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    />
+    {url && (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${alt} — cliquez pour ouvrir le lien`}
+        title={`${alt} — cliquez pour ouvrir le lien`}
+        className="absolute hover:scale-120 cursor-pointer animate-bounce top-4 right-4 bg-[var(--tertiary)] text-[var(--background)] p-2 rounded-full"
+      >
+        <FontAwesomeIcon
+          icon={faExternalLink}
+          className="w-4 h-4"
+          aria-hidden="true"
+        />
       </a>
     )}
   </div>
