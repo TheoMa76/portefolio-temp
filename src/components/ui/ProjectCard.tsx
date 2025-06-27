@@ -91,7 +91,7 @@ export default function ProjectCard({ project, isHovered, onHover, onLeave }: Pr
             <div
               key={index}
               className={`px-3 py-2 text-sm font-medium rounded-2xl bg-[var(--tertiary)] text-[var(--background)]
-                        text-center truncate hover:bg-[var(--tertiary-dark)] transition-colors duration-200
+                        text-center truncate transition-colors duration-200
                         ${isLastAndOdd ? 'col-span-2 w-1/2 mx-auto' : ''}`}
             >
               {tech}
