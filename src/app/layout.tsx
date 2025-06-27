@@ -12,6 +12,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Navbar } from "@/components/ui/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCogs, faEnvelope, faHeart, faHome, faProjectDiagram, faTimeline } from "@fortawesome/free-solid-svg-icons";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 config.autoAddCss = false
@@ -107,7 +108,7 @@ export default function RootLayout({
             </header>
             <main>
                 {children}
-               
+                <SpeedInsights />
                 <Analytics />
             </main>
             <footer>
