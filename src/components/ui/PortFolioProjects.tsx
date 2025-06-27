@@ -44,9 +44,12 @@ export default function PortfolioProjects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
-    <section className="max-w-6xl px-4 xl:px-0 mx-auto" aria-labelledby="projets" id="projets">
+    <section className="max-w-6xl px-4 xl:px-0 mx-auto"  id="projets" role="region" aria-labelledby="heading-projets">
       <div className="w-full mx-auto">
         <header className="text-center mb-16">
+          <h2 id="heading-projets" className="text-3xl md:text-5xl font-bold mb-12 text-[var(--tertiary)] text-center drop-shadow-lg animate-float">
+            Mes projets
+          </h2>
           <p className="text-xl max-w-5xl mx-auto leading-relaxed text-[var(--white)] bg-[var(--background)] bg-opacity-10 backdrop-blur-lg p-6 rounded-2xl shadow-lg">
             Découvrez une sélection de mes réalisations web, alliant créativité, performance technique et expérience utilisateur optimale.
           </p>

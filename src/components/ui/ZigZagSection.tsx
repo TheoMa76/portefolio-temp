@@ -23,7 +23,7 @@ export const ZigzagSection = ({ title, items, id, className = "" }: ZigzagSectio
   const headingId = id || `zigzag-heading-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
-    <section className={`w-full max-w-6xl px-4 xl:px-0 mx-auto ${className}`} role="region" aria-labelledby={headingId} id="passions">
+    <section className={`w-full max-w-6xl px-4 xl:px-0 mx-auto ${className}`} role="region"  id="passions" aria-labelledby={headingId}>
       <div className="w-full mx-auto">
         <h2
           id={headingId}
