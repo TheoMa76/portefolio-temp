@@ -59,21 +59,30 @@ export default function Home() {
               </p>
             `,
           },
-          {
+            {
             date: "août 2023 - août 2025",
-            title: "Développeur Full-Stack Alternant",
+            title: "Développeur Full‑Stack Alternant",
             content: `
               <p class="mb-10">
-                J’ai conçu et déployé une plateforme de gestion de bornes de recharge pour véhicules électriques en <strong>Java</strong>, intégrant un microservice de paiement sécurisé via <strong>Lyra et PayPal</strong>, ainsi qu’un <strong>algorithme</strong> de gestion de charge optimisé pour distribuer équitablement la charge entre les différents points de recharge.
+                J’ai conçu et déployé une plateforme de gestion de bornes de recharge pour véhicules électriques (EV charging platform) en <strong>Java</strong>, utilisant un microservice de paiement sécurisé avec <strong>Lyra</strong> et <strong>PayPal</strong>. J’ai implémenté un algorithme de gestion de charge intelligent (smart charging) optimisé pour équilibrer efficacement la distribution d’énergie.
               </p>
               <p class="mb-10">
-                La sécurité des communications est assurée par une <strong>cryptographie asymétrique ( RSA ) </strong>, protégeant la confidentialité et l’intégrité des données sensibles. J’ai également optimisé les performances applicatives pour réduire les latences et renforcer la robustesse du système.
+                J’ai assuré la sécurité des communications via une cryptographie asymétrique (RSA), garantissant la confidentialité et l’intégrité des données sensibles dans un environnement distribué.
               </p>
               <p class="mb-10">
-                Pour renforcer la présence en ligne de l’entreprise, j’ai développé un site vitrine sous <strong>Symfony</strong>, optimisé pour le <strong>SEO</strong> et conçu pour améliorer le trafic organique et les conversions, accompagné d’un back‑office intuitif favorisant la diffusion d’informations précises et une meilleure expérience utilisateur.
+                J’ai développé le front‑end de supervision en <strong>Angular</strong> : une interface UI/UX réactive et intuitive, conçue pour offrir une expérience utilisateur fluide et améliorer la lisibilité des données en temps réel.
+              </p>
+              <p class="mb-10">
+                J’ai mis en place des tests de bout en bout (E2E) avec <strong>Playwright</strong>, validant les parcours critiques sur plusieurs navigateurs (Chromium, Firefox, WebKit), et facilitant l’intégration continue (CI/CD).
+              </p>
+              <p class="mb-10">
+                J’ai également optimisé les performances applicatives, réduisant les temps de latence, améliorant la scalabilité, tout en garantissant un monitoring en temps réel de la charge et de la disponibilité des bornes.
+              </p>
+              <p class="mb-10">
+                En parallèle, j’ai développé un site vitrine sous <strong>Symfony</strong>, optimisé pour le SEO local et technique (on-page SEO, balises meta, structure H1/H2), favorisant le trafic organique et les conversions. Un back‑office intuitif a été mis en place pour faciliter la gestion des contenus et l’actualisation des services.
               </p>
               <p class="mb-10 p-6">
-                <strong>Résultat </strong>: une solution complète et sécurisée, adoptée par les utilisateurs et permettant à l’entreprise de se positionner comme un acteur clé dans le secteur des bornes de recharge.
+                <strong>Résultat :</strong> une solution full‑stack sécurisée et performante (Java, Angular, Symfony), adoptée par les utilisateurs, consolidant la position de l’entreprise comme acteur de référence dans l’écosystème des bornes de recharge.
               </p>
             `,
           },
