@@ -4,6 +4,7 @@ import React, { useMemo, useState, useEffect } from 'react'
 
 type Shape = 'triangle' | 'trapezoid'
 
+
 const randomBetween = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min
 
@@ -49,9 +50,13 @@ const FullPageDecoration = ({
   columns = 6,
 }: Props) => {
   const [isMounted, setIsMounted] = useState(false)
+  const [viewportHeight, setViewportHeight] = useState(0)
+
 
   useEffect(() => {
     setIsMounted(true)
+    setViewportHeight(window.innerHeight)
+
   }, [])
 
   const shapes = useMemo(() => {
@@ -84,7 +89,10 @@ const FullPageDecoration = ({
   if (!isMounted) return null
 
   return (
-    <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
+    <div
+      className="fixed left-0 top-0 w-screen -z-50 pointer-events-none overflow-hidden"
+      style={{ height: `${viewportHeight}px` }}
+    >
       <div className="w-full h-full backdrop-blur-md bg-[var(--white)]/30">
     <div
       className="w-full h-full grid"
